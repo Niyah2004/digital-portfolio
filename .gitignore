@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# JSON files (while preserving essential project config files)
+*.json
+!package.json
+!tsconfig.json
+!metadata.json

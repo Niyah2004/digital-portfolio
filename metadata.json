@@ -1,0 +1,6 @@
+{
+  "name": "Digital Portfolio",
+  "description": "A modern, responsive digital portfolio with inline video project demos, interactive skills matrix, work history timeline, and deployment instructions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
