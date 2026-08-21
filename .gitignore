@@ -10,5 +10,6 @@ coverage/
 # JSON files (while preserving essential project config files)
 *.json
 !package.json
+!package-lock.json
 !tsconfig.json
 !metadata.json
