@@ -17,7 +17,7 @@ export const initialProfile: Profile = {
   linkedin: "https://www.linkedin.com/in/janiyah-wright/",
   //twitter: "https://twitter.com",
   resumeDownloadName: "Janiyah_Wright_Resume_2026.pdf",
-  //avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+  avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
   stats: [
     {
       label: "Years of Experience",
