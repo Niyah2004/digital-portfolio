@@ -67,14 +67,25 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </p>
           </div>
 
-          {/* Inline Video Player inside Modal */}
+          {/* Inline Video Player inside Modal (falls back to a static preview when no demo video exists) */}
           <div className="mb-8">
-            <VideoPlayer
-              videoUrl={project.videoUrl}
-              posterUrl={project.fallbackPoster}
-              title={project.title}
-              caption={project.videoCaption}
-            />
+            {project.videoUrl ? (
+              <VideoPlayer
+                videoUrl={project.videoUrl}
+                posterUrl={project.fallbackPoster}
+                title={project.title}
+                caption={project.videoCaption}
+              />
+            ) : (
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-md border border-rose-100">
+                <img
+                  src={project.fallbackPoster}
+                  alt={`${project.title} preview graphic`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            )}
           </div>
 
           {/* Quick Metrics */}

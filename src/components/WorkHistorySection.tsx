@@ -38,7 +38,7 @@ export const WorkHistorySection: React.FC<WorkHistorySectionProps> = ({ experien
             Professional Work History
           </h2>
           <p className="text-base text-slate-600 mt-2">
-            A chronological timeline of leadership roles, engineering contributions, and proven business impact across industry-leading products.
+            A chronological timeline of internships, campus roles, and hands-on work that's shaped my path into software engineering.
           </p>
         </div>
 

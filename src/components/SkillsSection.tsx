@@ -79,7 +79,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
               Skills & Expertise
             </h2>
             <p className="text-base text-slate-600 mt-2 max-w-xl">
-              A comprehensive breakdown of technical proficiencies, architecture patterns, and domain competencies honed through enterprise shipping.
+              A breakdown of the technologies I actually use — built through internships, coursework, and shipping real personal projects.
             </p>
           </div>
 

@@ -46,7 +46,7 @@ export interface Project {
   category: ProjectCategory;
   categoryLabel: string;
   featured: boolean;
-  videoUrl: string;
+  videoUrl?: string;
   fallbackPoster: string;
   videoCaption?: string;
   liveUrl?: string;
@@ -70,7 +70,7 @@ export interface WorkExperience {
   location: string;
   period: string;
   isCurrent?: boolean;
-  type: 'Full-time' | 'Contract' | 'Lead';
+  type: string;
   description: string;
   responsibilities: string[];
   impactMetrics: string[];

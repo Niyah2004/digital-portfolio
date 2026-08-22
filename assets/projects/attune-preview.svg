@@ -1,0 +1,30 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F3E8FF"/>
+      <stop offset="100%" stop-color="#FCE7F3"/>
+    </linearGradient>
+    <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="45"/></filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1120" cy="140" r="180" fill="#D8B4FE" opacity="0.35" filter="url(#blur1)"/>
+  <circle cx="140" cy="600" r="200" fill="#F9A8D4" opacity="0.3" filter="url(#blur1)"/>
+
+  <g transform="translate(560,190)">
+    <circle cx="80" cy="80" r="80" fill="url(#moon)"/>
+    <circle cx="112" cy="56" r="66" fill="#F3E8FF"/>
+    <g opacity="0.9">
+      <circle cx="10" cy="20" r="3" fill="#C084FC"/>
+      <circle cx="160" cy="10" r="2.5" fill="#EC4899"/>
+      <circle cx="150" cy="150" r="3" fill="#C084FC"/>
+      <circle cx="-10" cy="120" r="2.5" fill="#EC4899"/>
+    </g>
+  </g>
+
+  <text x="640" y="500" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" fill="#6B21A8" text-anchor="middle">Attune</text>
+  <text x="640" y="540" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" letter-spacing="2" fill="#A21CAF" text-anchor="middle">PROJECT PREVIEW · NOT A LIVE SCREENSHOT</text>
+</svg>

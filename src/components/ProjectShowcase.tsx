@@ -115,14 +115,25 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
                 className="bg-white rounded-3xl overflow-hidden border border-rose-100/90 shadow-sm hover:shadow-xl hover:shadow-rose-100/60 hover:border-rose-300 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  {/* Inline Video Player Container */}
+                  {/* Inline Video Player Container (falls back to a static preview when no demo video exists) */}
                   <div className="p-4 sm:p-5 pb-0">
-                    <VideoPlayer
-                      videoUrl={project.videoUrl}
-                      posterUrl={project.fallbackPoster}
-                      title={project.title}
-                      caption={project.videoCaption}
-                    />
+                    {project.videoUrl ? (
+                      <VideoPlayer
+                        videoUrl={project.videoUrl}
+                        posterUrl={project.fallbackPoster}
+                        title={project.title}
+                        caption={project.videoCaption}
+                      />
+                    ) : (
+                      <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-md border border-rose-100">
+                        <img
+                          src={project.fallbackPoster}
+                          alt={`${project.title} preview graphic`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                   </div>
 
                   {/* Card Content */}
