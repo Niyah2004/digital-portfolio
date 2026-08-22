@@ -21,6 +21,28 @@ import { CustomizeProfileModal } from './components/CustomizeProfileModal';
 import { ResumeModal } from './components/ResumeModal';
 
 export default function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const saved = localStorage.getItem('portfolio_theme');
+    if (saved === 'dark' || saved === 'light') return saved;
+    return typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches 
+      ? 'dark' 
+      : 'light';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('portfolio_theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   const [profile, setProfile] = useState<Profile>(() => {
     const saved = localStorage.getItem('portfolio_profile');
     if (saved) {
@@ -58,10 +80,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8FA] text-slate-800 flex flex-col antialiased selection:bg-rose-200 selection:text-rose-900">
-      {/* Top Fixed Navigation */}
+    <div className="min-h-screen bg-[#FFF8FA] dark:bg-[#0B0F17] text-slate-800 dark:text-slate-100 flex flex-col antialiased selection:bg-pink-200 selection:text-pink-900 dark:selection:bg-pink-900/60 dark:selection:text-pink-100 transition-colors duration-300">
+      {/* Top Fixed Navigation with Dark Mode Toggle */}
       <Navbar
         profile={profile}
+        theme={theme}
+        onToggleTheme={toggleTheme}
         onOpenDeployGuide={() => setIsDeployGuideOpen(true)}
         onOpenCustomize={() => setIsCustomizeOpen(true)}
       />
@@ -98,6 +122,8 @@ export default function App() {
       {/* Footer */}
       <Footer
         profile={profile}
+        theme={theme}
+        onToggleTheme={toggleTheme}
         onOpenDeployGuide={() => setIsDeployGuideOpen(true)}
       />
 

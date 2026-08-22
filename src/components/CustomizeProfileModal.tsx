@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Save, RotateCcw, Sliders, Check, User, Mail, MapPin, Sparkles, Image as ImageIcon } from 'lucide-react';
+import { X, Save, RotateCcw, Sliders, Check } from 'lucide-react';
 import { Profile } from '../types';
 import { initialProfile } from '../data/portfolioData';
 
@@ -48,7 +48,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity"
+          className="fixed inset-0 bg-slate-950/70 backdrop-blur-md transition-opacity"
         />
 
         {/* Modal Window */}
@@ -57,12 +57,12 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.95, opacity: 0, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl border border-rose-100 z-10 p-6 sm:p-8"
+          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-pink-100 dark:border-slate-800 z-10 p-6 sm:p-8 text-slate-800 dark:text-slate-100"
         >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-rose-50 transition-colors z-20"
+            className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-pink-50 dark:hover:bg-slate-800 transition-colors z-20 cursor-pointer"
             aria-label="Close customizer"
           >
             <X className="w-5 h-5" />
@@ -70,14 +70,14 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
 
           {/* Header */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-2xl bg-rose-500 text-white flex items-center justify-center shadow-md shadow-rose-500/20">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-400 dark:from-rose-500 dark:to-pink-500 text-white flex items-center justify-center shadow-md shadow-pink-300/30 dark:shadow-rose-950/40">
               <Sliders className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 font-heading">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 font-heading">
                 Customize Portfolio
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                 Personalize your name, role, bio, and contact information instantly.
               </p>
             </div>
@@ -87,7 +87,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Full Name
                 </label>
                 <input
@@ -95,12 +95,12 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800"
+                  className="w-full px-3.5 py-2.5 text-sm bg-pink-50/40 dark:bg-slate-800/80 border border-pink-200/80 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Professional Title / Role
                 </label>
                 <input
@@ -108,13 +108,13 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                   required
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800"
+                  className="w-full px-3.5 py-2.5 text-sm bg-pink-50/40 dark:bg-slate-800/80 border border-pink-200/80 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                 Full Bio
               </label>
               <textarea
@@ -122,37 +122,37 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 required
                 value={formData.bio}
                 onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
-                className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 resize-none"
+                className="w-full px-3.5 py-2.5 text-sm bg-pink-50/40 dark:bg-slate-800/80 border border-pink-200/80 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100 resize-none"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                 Specialization / Short Focus Line
               </label>
               <input
                 type="text"
                 value={formData.shortBio}
                 onChange={(e) => setFormData({ ...formData, shortBio: e.target.value })}
-                className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800"
+                className="w-full px-3.5 py-2.5 text-sm bg-pink-50/40 dark:bg-slate-800/80 border border-pink-200/80 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Location
                 </label>
                 <input
                   type="text"
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800"
+                  className="w-full px-3.5 py-2.5 text-sm bg-pink-50/40 dark:bg-slate-800/80 border border-pink-200/80 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Contact Email
                 </label>
                 <input
@@ -160,14 +160,14 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800"
+                  className="w-full px-3.5 py-2.5 text-sm bg-pink-50/40 dark:bg-slate-800/80 border border-pink-200/80 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Phone Number
                 </label>
                 <input
@@ -175,29 +175,29 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                   value={formData.phone || ''}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="e.g. 469.231.4486"
-                  className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800"
+                  className="w-full px-3.5 py-2.5 text-sm bg-pink-50/40 dark:bg-slate-800/80 border border-pink-200/80 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Avatar Image URL
                 </label>
                 <input
                   type="url"
                   value={formData.avatarUrl}
                   onChange={(e) => setFormData({ ...formData, avatarUrl: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800"
+                  className="w-full px-3.5 py-2.5 text-sm bg-pink-50/40 dark:bg-slate-800/80 border border-pink-200/80 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100"
                 />
               </div>
             </div>
 
             {/* Modal Actions */}
-            <div className="pt-4 border-t border-rose-100 flex items-center justify-between gap-3">
+            <div className="pt-4 border-t border-pink-100 dark:border-slate-800 flex items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={handleResetToDefault}
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-colors cursor-pointer border border-transparent dark:border-slate-700"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 Reset to Default
@@ -207,14 +207,14 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 rounded-xl hover:bg-slate-50 transition-colors"
+                  className="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-xl hover:bg-pink-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-bold text-white bg-rose-600 hover:bg-rose-500 rounded-xl shadow-md shadow-rose-500/20 transition-all"
+                  className="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-bold text-white bg-gradient-to-r from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500 dark:from-rose-500 dark:to-pink-500 rounded-xl shadow-md shadow-pink-300/30 dark:shadow-rose-950/40 transition-all cursor-pointer"
                 >
                   {savedSuccess ? (
                     <>
