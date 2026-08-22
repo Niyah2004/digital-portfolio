@@ -61,11 +61,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/85 backdrop-blur-md shadow-xs border-b border-rose-100/80 py-3'
-          : 'bg-transparent py-5'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
+        ? 'bg-white/85 backdrop-blur-md shadow-xs border-b border-rose-100/80 py-3'
+        : 'bg-transparent py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
@@ -94,11 +93,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className={`px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
-                  isActive
-                    ? 'bg-rose-500 text-white shadow-xs'
-                    : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50'
-                }`}
+                className={`px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${isActive
+                  ? 'bg-rose-500 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50'
+                  }`}
               >
                 {link.label}
               </button>
@@ -109,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-2">
           {/* Customizer trigger */}
-          <button
+          {/* <button
             type="button"
             onClick={onOpenCustomize}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg border border-rose-200 transition-colors"
@@ -160,11 +158,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className={`w-full text-left px-3 py-2 text-sm font-medium rounded-lg flex items-center gap-2.5 transition-colors ${
-                activeSection === link.id
-                  ? 'bg-rose-50 text-rose-700 font-semibold'
-                  : 'text-slate-700 hover:bg-rose-50'
-              }`}
+              className={`w-full text-left px-3 py-2 text-sm font-medium rounded-lg flex items-center gap-2.5 transition-colors ${activeSection === link.id
+                ? 'bg-rose-50 text-rose-700 font-semibold'
+                : 'text-slate-700 hover:bg-rose-50'
+                }`}
             >
               <link.icon className="w-4 h-4 text-rose-500" />
               {link.label}

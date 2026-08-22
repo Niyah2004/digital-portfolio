@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { 
-  ArrowRight, 
-  Download, 
-  MapPin, 
-  Sparkles, 
-  Github, 
-  Linkedin, 
-  Mail, 
-  CheckCircle2, 
+import {
+  ArrowRight,
+  Download,
+  MapPin,
+  Sparkles,
+  Github,
+  Linkedin,
+  Mail,
+  CheckCircle2,
   PlayCircle,
   Briefcase
 } from 'lucide-react';
@@ -64,7 +64,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               className="space-y-2"
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
-                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-600 to-rose-500">{profile.name}</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-600 to-rose-500">{profile.name}</span>
               </h1>
               <p className="text-lg sm:text-xl font-medium text-rose-800 font-heading">
                 {profile.role}
@@ -81,7 +81,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 {profile.bio}
               </p>
-              
+
               <div className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm font-medium text-slate-500">
                 <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
                 <span>{profile.location}</span>
@@ -195,14 +195,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
 
                 {/* Floating Micro-Badge */}
-                <div className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-md p-3 rounded-2xl border border-rose-100 shadow-lg flex items-center gap-3">
+                <div className="absolute -bottom-4 -right-4 bg-white/90 backdrop-blur-md p-3 rounded-2xl border border-rose-100 shadow-lg flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center font-bold">
                     <Briefcase className="w-5 h-5" />
                   </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-900">100% Client Success</p>
-                    <p className="text-[11px] text-slate-500">Shipped on time & budget</p>
-                  </div>
+                  {/*<div>
+                    <p className="text-xs font-bold text-slate-900"></p>
+                    <p className="text-[11px] text-slate-500"> </p>
+                  </div>*/}
                 </div>
               </div>
             </motion.div>

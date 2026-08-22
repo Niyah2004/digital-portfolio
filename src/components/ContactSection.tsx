@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { 
-  Mail, 
-  Send, 
-  Copy, 
-  Check, 
-  MapPin, 
-  Clock, 
-  MessageSquare, 
-  Github, 
-  Linkedin, 
+import {
+  Mail,
+  Send,
+  Copy,
+  Check,
+  MapPin,
+  Clock,
+  MessageSquare,
+  Github,
+  Linkedin,
   Sparkles,
   ArrowRight
 } from 'lucide-react';
@@ -202,7 +202,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. Sarah Jenkins"
+                        placeholder="e.gName"
                         className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400/40 focus:border-rose-400 transition-all text-slate-800 placeholder-slate-400"
                       />
                     </div>
@@ -216,7 +216,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="e.g. sarah@company.com"
+                        placeholder="e.g. first.last@company.com"
                         className="w-full px-3.5 py-2.5 text-sm bg-rose-50/40 border border-rose-200/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-400/40 focus:border-rose-400 transition-all text-slate-800 placeholder-slate-400"
                       />
                     </div>

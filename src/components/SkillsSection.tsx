@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Code2, 
-  Server, 
-  Cloud, 
-  Palette, 
-  Cpu, 
-  Sparkles, 
-  Search, 
-  CheckCircle2, 
-  Layers, 
-  FileCode2, 
-  Database, 
-  Network, 
-  Figma, 
-  Eye, 
-  Gauge 
+import {
+  Code2,
+  Server,
+  Cloud,
+  Palette,
+  Cpu,
+  Sparkles,
+  Search,
+  CheckCircle2,
+  Layers,
+  FileCode2,
+  Database,
+  Network,
+  Figma,
+  Eye,
+  Gauge
 } from 'lucide-react';
 import { Skill, SkillCategory } from '../types';
 
@@ -58,7 +58,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
 
   const filteredSkills = skills.filter((skill) => {
     const matchesCategory = selectedCategory === 'all' || skill.category === selectedCategory;
-    const matchesSearch = 
+    const matchesSearch =
       skill.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       skill.highlight.toLowerCase().includes(searchQuery.toLowerCase()) ||
       skill.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -79,7 +79,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
               Skills & Expertise
             </h2>
             <p className="text-base text-slate-600 mt-2 max-w-xl">
-              A breakdown of the technologies I actually use — built through internships, coursework, and shipping real personal projects.
+              A breakdown of the technologies I've used throughout my experience, including through internships, coursework, and personal projects.
             </p>
           </div>
 
@@ -112,11 +112,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
-                  isSelected
-                    ? 'bg-rose-600 text-white shadow-sm shadow-rose-500/20'
-                    : 'bg-rose-50/60 text-slate-700 hover:bg-rose-100 hover:text-rose-700 border border-rose-100'
-                }`}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 ${isSelected
+                  ? 'bg-rose-600 text-white shadow-sm shadow-rose-500/20'
+                  : 'bg-rose-50/60 text-slate-700 hover:bg-rose-100 hover:text-rose-700 border border-rose-100'
+                  }`}
               >
                 <cat.icon className={`w-4 h-4 ${isSelected ? 'text-white' : 'text-rose-500'}`} />
                 {cat.label}
@@ -173,11 +172,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
                         </div>
                       </div>
 
-                      <span className={`px-2.5 py-0.5 text-[11px] font-bold rounded-full border ${
-                        skill.levelLabel === 'Expert' 
-                          ? 'bg-rose-100 text-rose-800 border-rose-200' 
-                          : 'bg-pink-50 text-pink-700 border-pink-200'
-                      }`}>
+                      <span className={`px-2.5 py-0.5 text-[11px] font-bold rounded-full border ${skill.levelLabel === 'Expert'
+                        ? 'bg-rose-100 text-rose-800 border-rose-200'
+                        : 'bg-pink-50 text-pink-700 border-pink-200'
+                        }`}>
                         {skill.levelLabel}
                       </span>
                     </div>

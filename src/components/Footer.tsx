@@ -48,13 +48,13 @@ export const Footer: React.FC<FooterProps> = ({ profile, onOpenDeployGuide }) =>
             <a href="#contact" className="hover:text-rose-600 transition-colors">
               Contact
             </a>
-            <button
+            {/*<buttons
               onClick={onOpenDeployGuide}
               className="inline-flex items-center gap-1 text-rose-600 hover:text-rose-700 bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-200 transition-colors"
             >
               <Rocket className="w-3.5 h-3.5" />
               Deploy Guide
-            </button>
+            </button>*/}
           </div>
 
           {/* Social Icons & Back to Top */}
