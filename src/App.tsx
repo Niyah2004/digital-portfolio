@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   initialProfile, 
+  educationData,
   skillsData, 
   projectsData, 
   workHistoryData 
@@ -8,6 +9,7 @@ import {
 import { Profile, Project } from './types';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
+import { EducationSection } from './components/EducationSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ProjectShowcase } from './components/ProjectShowcase';
 import { WorkHistorySection } from './components/WorkHistorySection';
@@ -74,19 +76,22 @@ export default function App() {
           onDownloadResume={() => setIsResumeOpen(true)}
         />
 
-        {/* 2. Visual Skills Matrix */}
+        {/* 2. Education & Certifications Section */}
+        <EducationSection education={educationData} />
+
+        {/* 3. Visual Skills Matrix */}
         <SkillsSection skills={skillsData} />
 
-        {/* 3. Project Showcase with Inline Video Demos */}
+        {/* 4. Project Showcase with Inline Video Demos */}
         <ProjectShowcase
           projects={projectsData}
           onSelectProject={(proj) => setSelectedProject(proj)}
         />
 
-        {/* 4. Work History Timeline */}
+        {/* 5. Work History Timeline */}
         <WorkHistorySection experiences={workHistoryData} />
 
-        {/* 5. Contact Section */}
+        {/* 6. Contact Section */}
         <ContactSection profile={profile} />
       </main>
 
@@ -120,8 +125,10 @@ export default function App() {
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
         profile={profile}
+        education={educationData}
         skills={skillsData}
         experiences={workHistoryData}
+        projects={projectsData}
       />
     </div>
   );

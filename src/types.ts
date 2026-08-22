@@ -10,6 +10,7 @@ export interface Profile {
     status: 'available' | 'contract_only' | 'busy';
     text: string;
   };
+  phone?: string;
   email: string;
   github: string;
   linkedin: string;
@@ -23,7 +24,7 @@ export interface Profile {
   }[];
 }
 
-export type SkillCategory = 'frontend' | 'backend' | 'cloud_devops' | 'design_ui' | 'ai_tools';
+export type SkillCategory = 'all' | 'frontend' | 'backend' | 'cloud_devops' | 'design_ui' | 'ai_tools' | 'risk_compliance' | 'programming' | 'cloud_testing' | 'genai_agentic' | 'tools_platforms';
 
 export interface Skill {
   id: string;
@@ -35,6 +36,29 @@ export interface Skill {
   experienceYears: number;
   highlight: string;
   tags: string[];
+}
+
+export interface EducationCertificate {
+  id: string;
+  name: string;
+  focus: string;
+  description: string;
+  badge: string;
+  skills: string[];
+}
+
+export interface Education {
+  id: string;
+  degree: string;
+  major: string;
+  institution: string;
+  location: string;
+  graduationDate: string;
+  gpa: string;
+  accreditation: string;
+  certificates: EducationCertificate[];
+  coursework: string[];
+  honors: string[];
 }
 
 export type ProjectCategory = 'all' | 'web_apps' | 'ai_systems' | 'design_engineering' | 'mobile_fullstack';

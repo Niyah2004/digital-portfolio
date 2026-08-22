@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Rocket, Sparkles, User, Briefcase, Award, Send, Sliders } from 'lucide-react';
+import { Menu, X, Rocket, Sparkles, User, Briefcase, Award, Send, Sliders, GraduationCap } from 'lucide-react';
 import { Profile } from '../types';
 
 interface NavbarProps {
@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['about', 'skills', 'projects', 'experience', 'contact'];
+      const sections = ['about', 'education', 'skills', 'projects', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -43,6 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { id: 'about', label: 'About', icon: User },
+    { id: 'education', label: 'Education', icon: GraduationCap },
     { id: 'skills', label: 'Skills', icon: Award },
     { id: 'projects', label: 'Projects', icon: Briefcase },
     { id: 'experience', label: 'Work History', icon: Sparkles },

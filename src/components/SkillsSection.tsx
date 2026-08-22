@@ -15,7 +15,12 @@ import {
   Network,
   Figma,
   Eye,
-  Gauge
+  Gauge,
+  ShieldCheck,
+  Lock,
+  Workflow,
+  Wrench,
+  BarChart3
 } from 'lucide-react';
 import { Skill, SkillCategory } from '../types';
 
@@ -29,11 +34,11 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
 
   const categories = [
     { id: 'all', label: 'All Competencies', icon: Layers },
-    { id: 'frontend', label: 'Frontend & UI', icon: Code2 },
-    { id: 'backend', label: 'Backend & APIs', icon: Server },
-    { id: 'cloud_devops', label: 'Cloud & Infrastructure', icon: Cloud },
-    { id: 'design_ui', label: 'Design & Accessibility', icon: Palette },
-    { id: 'ai_tools', label: 'AI & Systems', icon: Cpu },
+    { id: 'genai_agentic', label: 'Gen AI & Agentic AI', icon: Sparkles },
+    { id: 'risk_compliance', label: 'Risk & Compliance', icon: ShieldCheck },
+    { id: 'programming', label: 'Programming & Dev', icon: Code2 },
+    { id: 'cloud_testing', label: 'Cloud, DevOps & Testing', icon: Cloud },
+    { id: 'tools_platforms', label: 'Tools & Platforms', icon: Wrench },
   ];
 
   // Helper to render lucide icon dynamically
@@ -52,12 +57,28 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
       case 'Eye': return <Eye className={iconClass} />;
       case 'Cpu': return <Cpu className={iconClass} />;
       case 'Gauge': return <Gauge className={iconClass} />;
+      case 'ShieldCheck': return <ShieldCheck className={iconClass} />;
+      case 'Lock': return <Lock className={iconClass} />;
+      case 'Workflow': return <Workflow className={iconClass} />;
+      case 'Wrench': return <Wrench className={iconClass} />;
+      case 'BarChart3': return <BarChart3 className={iconClass} />;
+      case 'CheckCircle2': return <CheckCircle2 className={iconClass} />;
       default: return <Sparkles className={iconClass} />;
     }
   };
 
+  const isSkillInCategory = (skill: Skill, categoryId: string) => {
+    if (categoryId === 'all') return true;
+    if (categoryId === 'genai_agentic') return skill.category === 'genai_agentic' || skill.category === 'ai_tools';
+    if (categoryId === 'risk_compliance') return skill.category === 'risk_compliance';
+    if (categoryId === 'programming') return skill.category === 'programming' || skill.category === 'frontend' || skill.category === 'backend';
+    if (categoryId === 'cloud_testing') return skill.category === 'cloud_testing' || skill.category === 'cloud_devops';
+    if (categoryId === 'tools_platforms') return skill.category === 'tools_platforms' || skill.category === 'design_ui';
+    return skill.category === categoryId;
+  };
+
   const filteredSkills = skills.filter((skill) => {
-    const matchesCategory = selectedCategory === 'all' || skill.category === selectedCategory;
+    const matchesCategory = isSkillInCategory(skill, selectedCategory);
     const matchesSearch =
       skill.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       skill.highlight.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -108,6 +129,9 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat.id;
+            const count = cat.id === 'all'
+              ? skills.length
+              : skills.filter(s => isSkillInCategory(s, cat.id)).length;
             return (
               <button
                 key={cat.id}
@@ -119,6 +143,11 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
               >
                 <cat.icon className={`w-4 h-4 ${isSelected ? 'text-white' : 'text-rose-500'}`} />
                 {cat.label}
+                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
+                  isSelected ? 'bg-white/25 text-white' : 'bg-rose-100 text-rose-700'
+                }`}>
+                  {count}
+                </span>
               </button>
             );
           })}
@@ -206,12 +235,15 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
                   {/* Tech Tags */}
                   <div className="flex flex-wrap gap-1.5 pt-3 border-t border-rose-100/70">
                     {skill.tags.map((tag, idx) => (
-                      <span
+                      <button
                         key={idx}
-                        className="px-2 py-0.5 text-[11px] font-medium bg-rose-50 text-rose-800 rounded-md border border-rose-100/80"
+                        type="button"
+                        onClick={() => setSearchQuery(tag)}
+                        className="px-2 py-0.5 text-[11px] font-medium bg-rose-50 hover:bg-rose-100 text-rose-800 rounded-md border border-rose-100/80 transition-colors cursor-pointer"
+                        title={`Filter by ${tag}`}
                       >
                         {tag}
-                      </span>
+                      </button>
                     ))}
                   </div>
                 </motion.div>

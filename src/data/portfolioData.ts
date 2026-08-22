@@ -1,4 +1,4 @@
-import { Profile, Skill, Project, WorkExperience, DeploymentGuide } from '../types';
+import { Profile, Skill, Project, WorkExperience, DeploymentGuide, Education } from '../types';
 import avatarPhoto from '../../assets/JWImage.jpg';
 import habitiatPreview from '../../assets/projects/habitiat-preview.svg';
 import attunePreview from '../../assets/projects/attune-preview.svg';
@@ -13,11 +13,12 @@ export const initialProfile: Profile = {
   bio: "I am a full-stack engineer building modern web applications, machine learning projects, and mobile apps. My work bridges systems architecture and thoughtful UI design, creating software that's fast, accessible, and genuinely useful.",
   shortBio: "Specializing in React, TypeScript, Python/ML, and React Native, with hands-on experience shipping real projects end-to-end.",
   location: "Dallas, Texas - New York (Open to Remote)",
+  phone: "469.231.4486",
   availability: {
     status: "available",
     text: "Available for Software Development and Consulting"
   },
-  email: "janiyahwright26@gmail.com",
+  email: "JaniyahWright26@gmail.com",
   github: "https://github.com/Niyah2004",
   linkedin: "https://www.linkedin.com/in/janiyah-wright/",
   //twitter: "https://twitter.com",
@@ -28,6 +29,11 @@ export const initialProfile: Profile = {
       label: "Years of Experience",
       value: "<1 Year",
       description: "Hands-on experience from internships, coursework, and shipped personal projects"
+    },
+    {
+      label: "Academic GPA",
+      value: "3.9 / 4.0",
+      description: "BS in Computer Science (ABET Accredited) from University of North Texas"
     },
     {
       label: "Projects Shipped",
@@ -47,8 +53,52 @@ export const initialProfile: Profile = {
   ]
 };
 
+export const educationData: Education = {
+  id: "unt-cs",
+  degree: "Bachelor of Science",
+  major: "Computer Science",
+  institution: "University of North Texas",
+  location: "Denton, TX",
+  graduationDate: "May 2026",
+  gpa: "3.9",
+  accreditation: "ABET Accredited",
+  certificates: [
+    {
+      id: "cert-ai",
+      name: "Academic Certificate in Artificial Intelligence",
+      focus: "Neural Architectures, ML Algorithms & Agentic Systems",
+      description: "Specialized curriculum covering machine learning algorithms, deep neural network architectures, natural language processing, model evaluation, and on-device inference.",
+      badge: "Artificial Intelligence",
+      skills: ["Machine Learning", "Neural Networks", "NLP", "TensorFlow.js", "PyTorch", "Model Evaluation", "Agentic Systems"]
+    },
+    {
+      id: "cert-tech-comm",
+      name: "Academic Certificate in Technical Communication",
+      focus: "Engineering Documentation, Architecture Specs & Compliance Reporting",
+      description: "Rigorous focus on articulating complex technical concepts into executive presentations, system architecture diagrams, compliance audit reports, and user-centric documentation.",
+      badge: "Technical Communication",
+      skills: ["Architecture Specifications", "Compliance Auditing", "API Documentation", "Executive Reporting", "User Research"]
+    }
+  ],
+  coursework: [
+    "Artificial Intelligence & Machine Learning",
+    "Data Structures & Algorithms",
+    "Software Engineering & Architecture",
+    "Database Systems & Relational Modeling",
+    "Computer Systems & Operating Systems",
+    "Technical Writing & Engineering Communication",
+    "Network Security & Systems Administration"
+  ],
+  honors: [
+    "3.9 Cumulative GPA",
+    "Dean's List Honoree",
+    "ABET Accredited Engineering Curriculum",
+    "Academic Coach & IT Technician Campus Leadership"
+  ]
+};
+
 export const skillsData: Skill[] = [
-  // Frontend
+  // Frontend & Mobile (Original Skills Preserved)
   {
     id: "fe-react",
     name: "React & TypeScript",
@@ -83,7 +133,7 @@ export const skillsData: Skill[] = [
     tags: ["React Native", "Expo", "Expo Router", "AsyncStorage"]
   },
 
-  // Backend
+  // Backend & APIs (Original Skill Preserved)
   {
     id: "be-node",
     name: "Node.js, Express & Supabase",
@@ -96,7 +146,7 @@ export const skillsData: Skill[] = [
     tags: ["Node.js", "Express", "Supabase", "REST APIs"]
   },
 
-  // AI & Machine Learning
+  // AI & Machine Learning (Original Skills Preserved)
   {
     id: "ai-ml",
     name: "Machine Learning (Python)",
@@ -129,6 +179,159 @@ export const skillsData: Skill[] = [
     experienceYears: 1,
     highlight: "Google Gemini API wired through a custom Express backend to power an in-app assistant",
     tags: ["Gemini API", "Google GenAI SDK", "Express Proxy"]
+  },
+
+  // Gen AI & Agentic AI (Added from Resume)
+  {
+    id: "ai-agentic",
+    name: "Agentic AI System Design & Multi-Agent Workflows",
+    category: "genai_agentic",
+    level: 92,
+    levelLabel: "Expert",
+    icon: "Sparkles",
+    experienceYears: 2,
+    highlight: "Architecting multi-agent workflow integrations, context engineering, dynamic agent tool invocation, and autonomous reasoning pipelines.",
+    tags: ["Agentic AI", "Multi-Agent Workflows", "Context Engineering", "Autonomous Systems", "Tool Use"]
+  },
+  {
+    id: "ai-rag-llm",
+    name: "RAG & Enterprise LLM Integration",
+    category: "genai_agentic",
+    level: 90,
+    levelLabel: "Expert",
+    icon: "Cpu",
+    experienceYears: 2,
+    highlight: "Integrating LLMs (Gemini, OpenAI) with vector retrieval (RAG), structured output schemas, graceful no-key fallback systems, and production-ready endpoints.",
+    tags: ["RAG", "LLM Integration", "Gemini API", "Vector Embeddings", "Express Proxy", "Structured Prompts"]
+  },
+  {
+    id: "ai-prompt-eval",
+    name: "Prompt Engineering & Model Evaluation",
+    category: "genai_agentic",
+    level: 88,
+    levelLabel: "Advanced",
+    icon: "Network",
+    experienceYears: 2,
+    highlight: "Designing and hardening system prompts, context-window optimizations, adversarial robustness testing, and ML model evaluation metrics.",
+    tags: ["Prompt Engineering", "Context Engineering", "Model Evaluation", "Adversarial Hardening", "PyTorch"]
+  },
+
+  // Risk & Compliance (Added from Resume)
+  {
+    id: "sec-frameworks",
+    name: "Risk & Compliance (NIST CSF, ISO 27001, PCI-DSS, SOC 2)",
+    category: "risk_compliance",
+    level: 90,
+    levelLabel: "Expert",
+    icon: "ShieldCheck",
+    experienceYears: 2,
+    highlight: "Embedding security best practices and compliance standards (NIST CSF, ISO 27001, PCI-DSS, SOC 2) throughout delivery lifecycles and infrastructure.",
+    tags: ["NIST CSF", "ISO 27001", "PCI-DSS", "SOC 2", "Security Best Practices", "Control Evaluation"]
+  },
+  {
+    id: "sec-auth-iam",
+    name: "Authentication Architecture & Access Control (SSO, MFA, IAM)",
+    category: "risk_compliance",
+    level: 86,
+    levelLabel: "Advanced",
+    icon: "Lock",
+    experienceYears: 2,
+    highlight: "Evaluating enterprise authentication architectures (SSO, MFA, IAM policies), system availability, failover configurations, and network security controls.",
+    tags: ["SSO", "MFA", "IAM Policies", "Access Control", "GCP & Azure Security", "Network Controls"]
+  },
+  {
+    id: "sec-infra-audit",
+    name: "Control Evaluation & Infrastructure Integrity Reviews",
+    category: "risk_compliance",
+    level: 85,
+    levelLabel: "Advanced",
+    icon: "CheckCircle2",
+    experienceYears: 2,
+    highlight: "Executing structured test scripts and technical reviews across 12+ infrastructure components, relational database schemas, and data integrity logic.",
+    tags: ["Control Evaluation", "Database Schemas", "Data Integrity", "Compliance Auditing", "Risk Assessments"]
+  },
+
+  // Programming & Development (Added from Resume)
+  {
+    id: "dev-python-java",
+    name: "Python, Java, C++ & MATLAB",
+    category: "programming",
+    level: 90,
+    levelLabel: "Expert",
+    icon: "FileCode2",
+    experienceYears: 3,
+    highlight: "Building Python data pipelines and ML models, Java enterprise backend logic, C++ systems code, and MATLAB numerical computing.",
+    tags: ["Python", "Java", "C++", "MATLAB", "OOP Architecture", "Data Pipelines"]
+  },
+  {
+    id: "dev-sql-databases",
+    name: "SQL & Relational Database Engineering",
+    category: "programming",
+    level: 85,
+    levelLabel: "Advanced",
+    icon: "Database",
+    experienceYears: 2,
+    highlight: "Designing relational database schemas, writing optimized SQL queries, verifying data integrity validation logic, and integrating Supabase/PostgreSQL.",
+    tags: ["SQL", "PostgreSQL", "Supabase", "Schema Design", "Data Integrity", "Git"]
+  },
+
+  // Cloud, DevOps & Testing (Added from Resume)
+  {
+    id: "cloud-containers",
+    name: "Cloud Platforms & Containers (GCP, Azure, Docker, K8s)",
+    category: "cloud_testing",
+    level: 84,
+    levelLabel: "Advanced",
+    icon: "Cloud",
+    experienceYears: 2,
+    highlight: "Assessing enterprise infrastructure across GCP, Azure, and IBM mainframes; deploying and managing containerized applications with Docker and Kubernetes.",
+    tags: ["Docker", "Kubernetes", "GCP", "Azure", "IBM Mainframe", "Hybrid Cloud"]
+  },
+  {
+    id: "cloud-cicd",
+    name: "CI/CD Pipelines & Version Control (Jenkins, GitLab CI, Azure DevOps)",
+    category: "cloud_testing",
+    level: 86,
+    levelLabel: "Advanced",
+    icon: "Workflow",
+    experienceYears: 2,
+    highlight: "Automating build, test, and deployment workflows with Jenkins, GitLab CI, Azure DevOps, GitHub Actions, and Git version control.",
+    tags: ["Jenkins", "GitLab CI", "Azure DevOps", "GitHub", "GitLab", "CI/CD Pipelines"]
+  },
+  {
+    id: "testing-frameworks",
+    name: "Automated Testing Frameworks (Selenium, Cypress, Playwright, TestNG)",
+    category: "cloud_testing",
+    level: 88,
+    levelLabel: "Advanced",
+    icon: "Gauge",
+    experienceYears: 2,
+    highlight: "Designing and maintaining robust automated test suites with Selenium, Appium, Cypress, Playwright, and TestNG across web, mobile, and API surfaces.",
+    tags: ["Playwright", "Cypress", "Selenium", "Appium", "TestNG", "AI-Driven Testing"]
+  },
+
+  // Tools & Platforms (Added from Resume)
+  {
+    id: "tools-dev-platforms",
+    name: "Developer Tools & Platforms (Firebase, TensorFlow.js, Jira, ServiceNow)",
+    category: "tools_platforms",
+    level: 86,
+    levelLabel: "Advanced",
+    icon: "Wrench",
+    experienceYears: 2,
+    highlight: "Client-side on-device ML with TensorFlow.js, cloud backends with Firebase, enterprise service management with ServiceNow, Jira sprint workflows, Notion, and Slack.",
+    tags: ["Firebase", "TensorFlow.js", "Jira", "ServiceNow", "Notion", "Slack"]
+  },
+  {
+    id: "tools-bi-design",
+    name: "BI, Analytics & UI Prototyping (Power BI, Tableau, Excel, Figma)",
+    category: "tools_platforms",
+    level: 88,
+    levelLabel: "Advanced",
+    icon: "BarChart3",
+    experienceYears: 2,
+    highlight: "Distilling complex data sets into executive-ready dashboards using Power BI, Tableau, and Excel; creating high-fidelity interactive UI/UX prototypes in Figma.",
+    tags: ["Power BI", "Tableau", "Excel", "Figma", "Data Dashboards", "UI/UX Prototyping"]
   }
 ];
 
@@ -242,7 +445,7 @@ export const workHistoryData: WorkExperience[] = [
       "40% improvement in First Contentful Paint (FCP)",
       "Zero high-severity production regressions across 18 months"
     ],
-    technologies: ["PCI-DSS", "Excel", "HIPAA", "Risk Assessments",]
+    technologies: ["PCI-DSS", "Excel", "HIPAA", "Risk Assessments"]
   },
   {
     id: "work-2",
