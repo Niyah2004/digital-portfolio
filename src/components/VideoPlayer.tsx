@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Play, Pause, Volume2, VolumeX, Maximize, RotateCcw, MonitorPlay, AlertCircle } from 'lucide-react';
 
 interface VideoPlayerProps {
@@ -14,7 +14,6 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
   posterUrl,
   title,
   caption,
-  autoPlayOnClick = true,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -30,7 +29,6 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // Format seconds to mm:ss
   const formatTime = (timeInSeconds: number) => {
     if (isNaN(timeInSeconds)) return '0:00';
     const minutes = Math.floor(timeInSeconds / 60);
@@ -130,7 +128,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
     <div
       ref={containerRef}
       id={`video-container-${title.toLowerCase().replace(/\s+/g, '-')}`}
-      className="group relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-md border border-rose-100 transition-all duration-300"
+      className="group relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-200/50 dark:border-slate-800 transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={!hasStarted ? togglePlay : undefined}
@@ -156,30 +154,30 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
           setHasError(true);
           setIsLoading(false);
         }}
-        className="w-full h-full object-cover transition-opacity duration-300"
+        className="w-full h-full object-cover"
       />
 
-      {/* Initial Play Overlay (Before user clicks) */}
+      {/* Initial Play Overlay */}
       {!hasStarted && (
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex flex-col justify-between p-4 z-10 cursor-pointer transition-all duration-300 group-hover:bg-slate-950/60">
+        <div className="absolute inset-0 bg-slate-950/40 hover:bg-slate-950/50 flex flex-col justify-between p-3.5 z-10 cursor-pointer transition-all duration-300">
           <div className="flex items-center justify-between">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-500/90 text-white backdrop-blur-md shadow-sm">
-              <MonitorPlay className="w-3.5 h-3.5" />
-              Interactive Video Demo
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 backdrop-blur-md">
+              <MonitorPlay className="w-3 h-3 text-rose-500 dark:text-pink-400" />
+              Demo Video
             </span>
-            <span className="text-xs font-medium text-white/80 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded">
-              Click to Play Inline
+            <span className="text-[10px] font-mono text-white/70 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded">
+              Click to Play
             </span>
           </div>
 
           <div className="flex items-center justify-center my-auto">
-            <div className="w-14 h-14 rounded-full bg-rose-500/90 text-white flex items-center justify-center shadow-lg shadow-rose-500/40 group-hover:scale-110 group-hover:bg-rose-600 transition-transform duration-300">
-              <Play className="w-6 h-6 fill-current translate-x-0.5" />
+            <div className="w-12 h-12 rounded-full bg-white text-slate-900 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <Play className="w-5 h-5 fill-current translate-x-0.5 text-rose-500" />
             </div>
           </div>
 
           {caption && (
-            <p className="text-xs text-slate-200 line-clamp-1 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-md">
+            <p className="text-[11px] text-slate-200 line-clamp-1 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded">
               {caption}
             </p>
           )}
@@ -189,31 +187,31 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
       {/* Loading Spinner */}
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] z-20 pointer-events-none">
-          <div className="w-10 h-10 border-3 border-rose-400/30 border-t-rose-500 rounded-full animate-spin" />
+          <div className="w-8 h-8 border-2 border-pink-400/30 border-t-pink-400 rounded-full animate-spin" />
         </div>
       )}
 
       {/* Error Fallback Notice */}
       {hasError && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/95 text-white p-4 text-center z-20">
-          <AlertCircle className="w-8 h-8 text-rose-400 mb-2" />
-          <p className="text-sm font-semibold text-rose-200">Video Demo Stream Offline</p>
-          <p className="text-xs text-slate-400 mt-1 max-w-xs">
-            A static preview poster is active. You can still test interactive project features directly in the details modal.
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 text-white p-4 text-center z-20">
+          <AlertCircle className="w-6 h-6 text-rose-400 mb-1.5" />
+          <p className="text-xs font-semibold text-rose-200">Video Demo Offline</p>
+          <p className="text-[11px] text-slate-400 mt-0.5 max-w-xs">
+            Static preview active. You can explore full details and source code below.
           </p>
           <button
             onClick={handleRestart}
-            className="mt-3 px-3 py-1.5 text-xs font-medium bg-rose-600 hover:bg-rose-500 rounded-md text-white transition-colors"
+            className="mt-2.5 px-2.5 py-1 text-xs font-medium bg-slate-800 hover:bg-slate-700 rounded-md text-white transition-colors cursor-pointer"
           >
             Retry Video
           </button>
         </div>
       )}
 
-      {/* Inline Controls (Visible when active or hovered) */}
+      {/* Inline Controls */}
       {hasStarted && !hasError && (
         <div
-          className={`absolute inset-0 flex flex-col justify-between p-3 bg-gradient-to-t from-black/85 via-transparent to-black/40 z-20 transition-opacity duration-300 ${
+          className={`absolute inset-0 flex flex-col justify-between p-3 bg-gradient-to-t from-black/80 via-transparent to-black/30 z-20 transition-opacity duration-300 ${
             isHovered || !isPlaying ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
           onClick={(e) => {
@@ -222,25 +220,25 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         >
           {/* Top Bar */}
           <div className="flex items-center justify-between">
-            <span className="text-xs font-medium text-white/90 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-md truncate max-w-[200px]">
+            <span className="text-xs font-medium text-white/90 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded truncate max-w-[200px]">
               {title}
             </span>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1">
               <button
                 type="button"
                 onClick={cyclePlaybackRate}
-                className="text-[11px] font-bold text-rose-200 hover:text-white bg-white/15 hover:bg-white/25 px-2 py-0.5 rounded transition-colors"
-                title="Change playback speed"
+                className="text-[10px] font-mono text-white/80 hover:text-white bg-white/10 px-1.5 py-0.5 rounded transition-colors"
+                title="Playback speed"
               >
                 {playbackRate}x
               </button>
               <button
                 type="button"
                 onClick={handleRestart}
-                className="p-1 rounded text-white/80 hover:text-white bg-white/15 hover:bg-white/25 transition-colors"
+                className="p-1 rounded text-white/80 hover:text-white bg-white/10 transition-colors"
                 title="Restart video"
               >
-                <RotateCcw className="w-3.5 h-3.5" />
+                <RotateCcw className="w-3 h-3" />
               </button>
             </div>
           </div>
@@ -251,17 +249,16 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
               <button
                 type="button"
                 onClick={togglePlay}
-                className="w-12 h-12 rounded-full bg-rose-500/90 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+                className="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
                 title="Play"
               >
-                <Play className="w-5 h-5 fill-current translate-x-0.5" />
+                <Play className="w-4 h-4 fill-current translate-x-0.5 text-rose-500" />
               </button>
             </div>
           )}
 
           {/* Bottom Controls Bar */}
-          <div className="space-y-1.5 mt-auto">
-            {/* Scrubber Range */}
+          <div className="space-y-1 mt-auto">
             <div className="flex items-center gap-2">
               <input
                 type="range"
@@ -270,7 +267,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
                 step="0.1"
                 value={progress}
                 onChange={handleSeek}
-                className="w-full h-1.5 bg-white/30 rounded-lg appearance-none cursor-pointer accent-rose-500 hover:h-2 transition-all"
+                className="w-full h-1 bg-white/25 rounded-lg appearance-none cursor-pointer accent-pink-400 hover:h-1.5 transition-all"
                 title="Seek timeline"
               />
             </div>
@@ -280,36 +277,34 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
                 <button
                   type="button"
                   onClick={togglePlay}
-                  className="p-1.5 rounded hover:bg-white/20 text-white transition-colors"
+                  className="p-1 rounded hover:bg-white/10 text-white transition-colors"
                   title={isPlaying ? 'Pause' : 'Play'}
                 >
-                  {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current" />}
+                  {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-current" />}
                 </button>
 
                 <button
                   type="button"
                   onClick={toggleMute}
-                  className="p-1.5 rounded hover:bg-white/20 text-white transition-colors"
+                  className="p-1 rounded hover:bg-white/10 text-white transition-colors"
                   title={isMuted ? 'Unmute' : 'Mute'}
                 >
-                  {isMuted ? <VolumeX className="w-4 h-4 text-rose-300" /> : <Volume2 className="w-4 h-4" />}
+                  {isMuted ? <VolumeX className="w-3.5 h-3.5 text-pink-300" /> : <Volume2 className="w-3.5 h-3.5" />}
                 </button>
 
-                <span className="text-[11px] font-mono text-slate-300">
+                <span className="text-[10px] font-mono text-slate-300">
                   {formatTime(currentTime)} / {formatTime(duration)}
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5">
-                <button
-                  type="button"
-                  onClick={toggleFullscreen}
-                  className="p-1.5 rounded hover:bg-white/20 text-white transition-colors"
-                  title="Fullscreen"
-                >
-                  <Maximize className="w-4 h-4" />
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={toggleFullscreen}
+                className="p-1 rounded hover:bg-white/10 text-white transition-colors"
+                title="Fullscreen"
+              >
+                <Maximize className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
         </div>

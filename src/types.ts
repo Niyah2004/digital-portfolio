@@ -4,7 +4,7 @@ export interface Profile {
   role: string;
   tagline: string;
   bio: string;
-  shortBio: string;
+  // shortBio: string;
   location: string;
   availability: {
     status: 'available' | 'contract_only' | 'busy';
@@ -42,7 +42,7 @@ export interface EducationCertificate {
   id: string;
   name: string;
   focus: string;
-  description: string;
+  //description: string;
   badge: string;
   skills: string[];
 }
@@ -89,8 +89,6 @@ export interface WorkExperience {
   id: string;
   role: string;
   company: string;
-  companyBadge: string;
-  companyUrl?: string;
   location: string;
   period: string;
   isCurrent?: boolean;

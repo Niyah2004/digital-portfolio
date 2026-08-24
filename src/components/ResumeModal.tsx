@@ -47,12 +47,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
           initial={{ scale: 0.95, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.95, opacity: 0, y: 20 }}
-          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-pink-100 dark:border-slate-800 z-10 p-6 sm:p-10 print:max-w-none print:max-h-none print:shadow-none print:border-none print:p-8 print:bg-white print:text-black print:dark:bg-white print:dark:text-black"
+          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200/60 dark:border-slate-800 z-10 p-6 sm:p-10 print:max-w-none print:max-h-none print:shadow-none print:border-none print:p-8 print:bg-white print:text-black print:dark:bg-white print:dark:text-black"
         >
           {/* Action Bar (Hidden when printing) */}
-          <div className="flex items-center justify-between pb-6 mb-6 border-b border-pink-100 dark:border-slate-800 print:hidden">
+          <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200/60 dark:border-slate-800 print:hidden">
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-pink-100/80 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-pink-200 dark:border-rose-900/40">
+              <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-slate-800 text-rose-600 dark:text-pink-300 border border-slate-200/60 dark:border-slate-700">
                 Curriculum Vitae
               </span>
               <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
@@ -64,17 +64,17 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               <button
                 type="button"
                 onClick={handlePrint}
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-colors cursor-pointer border border-transparent dark:border-slate-700"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 rounded-xl shadow-xs transition-all cursor-pointer"
                 title="Print or Save as PDF"
               >
-                <Printer className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                <Printer className="w-4 h-4" />
                 Print / Save PDF
               </button>
 
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-pink-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="p-2 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 aria-label="Close resume view"
               >
                 <X className="w-5 h-5" />
@@ -197,7 +197,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                           {proj.title}
                         </h3>
                         <span className="font-mono text-slate-600 dark:text-slate-400 print:text-slate-600 text-[11px] font-semibold">
-                          {proj.id === 'proj-flourish' ? 'Aug 2026 — Present' : 'Mar 2025 — Jul 2026'}
+                          {proj.categoryLabel}
                         </span>
                       </div>
 

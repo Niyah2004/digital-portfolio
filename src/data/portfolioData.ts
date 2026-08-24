@@ -8,15 +8,15 @@ import flourishPreview from '../../assets/projects/flourish-preview.svg';
 export const initialProfile: Profile = {
   name: "Janiyah Wright",
   pronouns: "she/her",
-  role: "Full-Stack Engineer & Consulting",
+  role: "Technology Consulting and Software Development",
   tagline: "Computer Science Graduate from The University of North Texas, experience in Artificial Intelligence,",
-  bio: "I am a full-stack engineer building modern web applications, machine learning projects, and mobile apps. My work bridges systems architecture and thoughtful UI design, creating software that's fast, accessible, and genuinely useful.",
-  shortBio: "Specializing in React, TypeScript, Python/ML, and React Native, with hands-on experience shipping real projects end-to-end.",
-  location: "Dallas, Texas - New York (Open to Remote)",
+  bio: "I am a technology consultant building modern web applications, machine learning projects, and mobile apps. My work bridges systems architecture and thoughtful UI design, creating software that's fast, accessible, and genuinely useful.",
+  //shortBio: "Specializing in React, TypeScript, Python/ML, and React Native, with hands-on experience shipping real projects end-to-end.",
+  location: "Dallas, Texas",
   phone: "469.231.4486",
   availability: {
     status: "available",
-    text: "Available for Software Development and Consulting"
+    text: "Available for Technology Consulting and Software Development"
   },
   email: "JaniyahWright26@gmail.com",
   github: "https://github.com/Niyah2004",
@@ -24,33 +24,7 @@ export const initialProfile: Profile = {
   //twitter: "https://twitter.com",
   resumeDownloadName: "Janiyah_Wright_Resume_2026.pdf",
   avatarUrl: avatarPhoto,
-  stats: [
-    {
-      label: "Years of Experience",
-      value: "<1 Year",
-      description: "Hands-on experience from internships, coursework, and shipped personal projects"
-    },
-    {
-      label: "Academic GPA",
-      value: "3.9 / 4.0",
-      description: "BS in Computer Science (ABET Accredited) from University of North Texas"
-    },
-    {
-      label: "Projects Shipped",
-      value: "4",
-      description: "Web, mobile, and machine learning projects built end-to-end"
-    },
-    {
-      label: "Support Tickets Resolved",
-      value: "200+",
-      description: "Intuit TurboTax product support via Education at Work"
-    },
-    {
-      label: "Sentiment Model Accuracy",
-      value: "59.6%",
-      description: "3-class tweet sentiment classifier (Word2Vec + PyTorch)"
-    }
-  ]
+  stats: []
 };
 
 export const educationData: Education = {
@@ -67,7 +41,7 @@ export const educationData: Education = {
       id: "cert-ai",
       name: "Academic Certificate in Artificial Intelligence",
       focus: "Neural Architectures, ML Algorithms & Agentic Systems",
-      description: "Specialized curriculum covering machine learning algorithms, deep neural network architectures, natural language processing, model evaluation, and on-device inference.",
+      // description: "Specialized curriculum covering machine learning algorithms, deep neural network architectures, natural language processing, model evaluation, and on-device inference.",
       badge: "Artificial Intelligence",
       skills: ["Machine Learning", "Neural Networks", "NLP", "TensorFlow.js", "PyTorch", "Model Evaluation", "Agentic Systems"]
     },
@@ -75,7 +49,7 @@ export const educationData: Education = {
       id: "cert-tech-comm",
       name: "Academic Certificate in Technical Communication",
       focus: "Engineering Documentation, Architecture Specs & Compliance Reporting",
-      description: "Rigorous focus on articulating complex technical concepts into executive presentations, system architecture diagrams, compliance audit reports, and user-centric documentation.",
+      //description: "Rigorous focus on articulating complex technical concepts into executive presentations, system architecture diagrams, compliance audit reports, and user-centric documentation.",
       badge: "Technical Communication",
       skills: ["Architecture Specifications", "Compliance Auditing", "API Documentation", "Executive Reporting", "User Research"]
     }
@@ -387,11 +361,7 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/Niyah2004/Machine-Learning-",
     description: "A machine learning coursework project exploring lexical semantics: custom Word2Vec embeddings trained on tweet text feed a PyTorch neural network that classifies tweets as negative, neutral, or positive, evaluated with stratified cross-validation on the TweetEval sentiment benchmark.",
     techStack: ["Python", "PyTorch", "gensim (Word2Vec)", "scikit-learn", "Jupyter Notebook", "TweetEval Dataset"],
-    metrics: [
-      { label: "Test Accuracy", value: "59.6%" },
-      { label: "Test F1 (weighted)", value: "58.7%" },
-      { label: "Test Examples", value: "12,284" }
-    ],
+    metrics: [],
     keyFeatures: [
       "Custom Word2Vec embeddings trained directly on the tweet corpus",
       "PyTorch neural network classifier with a trainable embedding layer",
@@ -427,23 +397,20 @@ export const workHistoryData: WorkExperience[] = [
     id: "work-1",
     role: "Technology Consultant - Security & Privacy",
     company: "Protiviti",
-    companyBadge: "LDS",
-    companyUrl: "https://example.com",
     location: "Dallas, Texas (Hybrid)",
     period: "July, 2026 — Present",
     isCurrent: true,
     type: "Consultant 1",
-    description: "Directing architectural decisions and leading a cross-functional squad of 7 engineers building next-generation enterprise SaaS products and design systems.",
+    description: "Evaluating technical controls, authentication architecture, and infrastructure security posture for enterprise clients across risk and compliance frameworks including NIST CSF, PCI-DSS, HIPAA, and SOC 2.",
     responsibilities: [
-      "Spearheaded the migration of legacy monolith to modular React 19 / Next.js micro-frontends, reducing deployment cycle times by 55%.",
-      "Architected real-time collaboration engines using WebSockets and optimistic caching, supporting 15,000+ concurrent enterprise users.",
-      "Established strict TypeScript and design system standards across 4 core product repositories, raising test coverage from 64% to 92%.",
-      "Mentored 6 junior and mid-level engineers through bi-weekly 1-on-1s, code architecture reviews, and technical brown-bag sessions."
+      "Executed structured test scripts and technical control evaluations across 12+ infrastructure components, relational database schemas, and data integrity logic.",
+      "Assessed enterprise authentication architectures — SSO, MFA, and IAM policies — alongside system availability, failover configurations, and network security controls.",
+      "Embedded security best practices and compliance requirements (NIST CSF, ISO 27001, PCI-DSS, SOC 2, HIPAA) throughout client delivery lifecycles and infrastructure reviews.",
+      "Assessed enterprise infrastructure spanning GCP, Azure, and IBM mainframe environments as part of hybrid cloud risk assessments."
     ],
     impactMetrics: [
-      "55% reduction in release deployment time",
-      "40% improvement in First Contentful Paint (FCP)",
-      "Zero high-severity production regressions across 18 months"
+      "Structured technical reviews across 12+ infrastructure components per engagement",
+      "Multi-framework compliance coverage: NIST CSF, ISO 27001, PCI-DSS, SOC 2"
     ],
     technologies: ["PCI-DSS", "Excel", "HIPAA", "Risk Assessments"]
   },
@@ -451,8 +418,6 @@ export const workHistoryData: WorkExperience[] = [
     id: "work-2",
     role: "QA AI Automation Engineer",
     company: "Cognizant",
-    companyBadge: "VI",
-    companyUrl: "https://example.com",
     location: "Plano, Tx (Onsite)",
     period: "May 2026 - June 2026",
     isCurrent: false,
@@ -471,8 +436,6 @@ export const workHistoryData: WorkExperience[] = [
     id: "work-3",
     role: "Intuit Turbo Tax Product Support Expert",
     company: "Education at Work",
-    companyBadge: "BHL",
-    companyUrl: "https://example.com",
     location: "Remote",
     period: "January 2026 — May 2026",
     isCurrent: false,
@@ -484,17 +447,31 @@ export const workHistoryData: WorkExperience[] = [
       "Maintained strong customer satisfaction and resolution-time standards during peak tax season.",
       "Documented recurring issues to help improve internal support resources."
     ],
-    impactMetrics: [
-      "Handled 200+ Support Tickets"
-    ],
+    impactMetrics: [],
     technologies: ["Customer Support", "TurboTax", "Troubleshooting", "Slack"]
   },
   {
     id: "work-4",
+    role: "Technology Consulting Intern",
+    company: "Protiviti",
+    location: "Dallas, Texas (Hybrid)",
+    period: "May 2025 — July 2025",
+    isCurrent: false,
+    type: "Internship",
+    description: "Supported the Technology Consulting practice on client engagements, gaining hands-on exposure to security, risk, and compliance work ahead of returning full-time as a Technology Consultant.",
+    responsibilities: [
+      "Assisted senior consultants with technical control testing and documentation across client engagements.",
+      "Supported research and analysis on risk and compliance frameworks including NIST CSF and PCI-DSS.",
+      "Shadowed client meetings and contributed to deliverables under the guidance of engagement teams.",
+      "Built foundational knowledge of enterprise IT risk, security, and audit processes."
+    ],
+    impactMetrics: [],
+    technologies: ["Risk Assessments", "Excel", "PCI-DSS", "Client Delivery"]
+  },
+  {
+    id: "work-5",
     role: "Geek Squad Agent",
     company: "Best Buy",
-    companyBadge: "GS",
-    companyUrl: "https://example.com",
     location: "Texas",
     period: "Fall 2024 — Spring 2025",
     isCurrent: false,
@@ -510,11 +487,9 @@ export const workHistoryData: WorkExperience[] = [
     technologies: ["Hardware Diagnostics", "Troubleshooting", "Customer Service"]
   },
   {
-    id: "work-5",
+    id: "work-6",
     role: "IT Help Desk Technician",
     company: "University of North Texas",
-    companyBadge: "UNT",
-    companyUrl: "https://example.com",
     location: "Denton, Texas",
     period: "Fall 2023 — Spring 2024",
     isCurrent: false,
@@ -530,11 +505,9 @@ export const workHistoryData: WorkExperience[] = [
     technologies: ["Help Desk Support", "Ticketing Systems", "Troubleshooting", "Networking Basics"]
   },
   {
-    id: "work-6",
+    id: "work-7",
     role: "Academic Coach",
     company: "University of North Texas",
-    companyBadge: "UNT",
-    companyUrl: "https://example.com",
     location: "Denton, Texas",
     period: "Fall 2022 — Spring 2023",
     isCurrent: false,

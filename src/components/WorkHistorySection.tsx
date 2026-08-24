@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { 
-  Briefcase, 
-  Calendar, 
+  Building2, 
   MapPin, 
-  TrendingUp, 
   CheckCircle2, 
-  Sparkles, 
-  Building2 
+  Sparkles 
 } from 'lucide-react';
 import { WorkExperience } from '../types';
 
@@ -16,142 +13,120 @@ interface WorkHistorySectionProps {
 }
 
 export const WorkHistorySection: React.FC<WorkHistorySectionProps> = ({ experiences }) => {
-  const [expandedId, setExpandedId] = useState<string | null>(experiences[0]?.id || null);
-
-  const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
-
   return (
     <section 
       id="experience" 
-      className="py-20 sm:py-28 relative bg-white/60 dark:bg-[#0B0F17] border-t border-pink-100/70 dark:border-slate-800/80 transition-colors duration-300"
+      className="py-20 sm:py-28 relative bg-white dark:bg-[#0B0F17] border-t border-slate-200/50 dark:border-slate-800/60 transition-colors duration-300"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-pink-100/80 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 border border-pink-200/60 dark:border-rose-900/50 mb-3">
-            <Briefcase className="w-3.5 h-3.5" />
-            Career Progression
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 font-heading tracking-tight">
-            Professional Work History
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        {/* Section Header */}
+        <div className="mb-14">
+          <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-rose-500 dark:text-pink-400 block mb-2">
+            04 / Track Record
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading tracking-tight">
+            Professional Experience
           </h2>
-          <p className="text-base text-slate-600 dark:text-slate-400 mt-2">
-            A chronological timeline of internships, campus roles, and hands-on work that's shaped my path into software engineering.
+          <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-xl">
+            Chronological record of software development, consulting, and systems support roles.
           </p>
         </div>
 
         {/* Timeline Container */}
-        <div className="relative pl-6 sm:pl-8 border-l-2 border-pink-200/80 dark:border-slate-800 space-y-12 ml-2 sm:ml-6">
+        <div className="relative pl-6 sm:pl-8 border-l border-slate-200 dark:border-slate-800 space-y-10 ml-2 sm:ml-4">
           {experiences.map((exp, index) => {
-            const isExpanded = expandedId === exp.id;
             return (
               <motion.div
                 key={exp.id}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
                 className="relative group"
               >
-                {/* Timeline Dot Marker */}
+                {/* Minimalist Dot Marker */}
                 <div 
-                  className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full border-4 border-white dark:border-slate-900 flex items-center justify-center shadow-md transition-colors ${
+                  className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-slate-900 transition-all ${
                     exp.isCurrent
-                      ? 'bg-gradient-to-br from-rose-400 to-pink-400 dark:from-rose-500 dark:to-pink-500 text-white ring-4 ring-pink-100 dark:ring-rose-950/50'
-                      : 'bg-pink-100 dark:bg-slate-800 text-rose-600 dark:text-rose-400 group-hover:bg-rose-400 group-hover:text-white dark:group-hover:bg-rose-500'
+                      ? 'bg-rose-500 ring-4 ring-pink-500/20'
+                      : 'bg-slate-300 dark:bg-slate-700 group-hover:bg-rose-500 dark:group-hover:bg-pink-400'
                   }`}
-                >
-                  <Briefcase className="w-3.5 h-3.5" />
-                </div>
+                />
 
                 {/* Experience Card */}
-                <div className="bg-white/90 dark:bg-slate-900/85 backdrop-blur-sm rounded-2xl p-6 sm:p-7 border border-pink-100/90 dark:border-slate-800 shadow-xs hover:shadow-md hover:border-pink-300 dark:hover:border-rose-500/40 transition-all duration-300">
+                <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-7 border border-slate-200/60 dark:border-slate-800 shadow-xs sleek-hover">
                   {/* Top Bar: Role, Company, Period */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-3">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 font-heading">
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-heading">
                           {exp.role}
                         </h3>
-                        <span className="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-pink-50 dark:bg-slate-800 text-rose-700 dark:text-rose-300 border border-pink-200 dark:border-slate-700">
-                          {exp.type}
-                        </span>
                         {exp.isCurrent && (
-                          <span className="px-2 py-0.5 text-[11px] font-bold rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/50">
-                            Current Role
+                          <span className="px-2 py-0.5 text-[10px] font-bold font-mono rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/50">
+                            Current
                           </span>
                         )}
+                        <span className="px-2 py-0.5 text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 rounded">
+                          {exp.type}
+                        </span>
                       </div>
 
-                      <div className="flex items-center gap-3 text-sm font-semibold text-rose-600 dark:text-rose-400 mt-1 flex-wrap">
-                        <span className="flex items-center gap-1.5">
-                          <Building2 className="w-4 h-4 text-rose-400" />
+                      <div className="flex items-center gap-2 text-xs text-rose-600 dark:text-pink-400 font-medium mt-1 flex-wrap">
+                        <span className="flex items-center gap-1 font-semibold text-slate-800 dark:text-slate-200">
+                          <Building2 className="w-3.5 h-3.5 text-rose-500 dark:text-pink-400" />
                           {exp.company}
                         </span>
-                        <span className="text-pink-300 dark:text-slate-600">•</span>
-                        <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-normal">
-                          <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                        <span className="text-slate-300 dark:text-slate-700">•</span>
+                        <span className="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+                          <MapPin className="w-3 h-3 text-slate-400" />
                           {exp.location}
                         </span>
                       </div>
                     </div>
 
-                    {/* Period Badge */}
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-50/50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold font-mono border border-pink-100 dark:border-slate-700 shrink-0 self-start sm:self-auto">
-                      <Calendar className="w-3.5 h-3.5 text-rose-400" />
+                    {/* Period */}
+                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400 font-medium shrink-0">
                       {exp.period}
-                    </div>
+                    </span>
                   </div>
 
                   {/* Summary */}
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
                     {exp.description}
                   </p>
 
                   {/* Responsibilities list */}
-                  <div className="space-y-2 mb-5">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                      Key Responsibilities & Contributions:
-                    </h4>
-                    <ul className="space-y-2">
-                      {exp.responsibilities.map((resp, rIdx) => (
-                        <li key={rIdx} className="flex items-start gap-2.5 text-sm text-slate-700 dark:text-slate-300">
-                          <CheckCircle2 className="w-4 h-4 text-rose-400 mt-0.5 shrink-0" />
-                          <span>{resp}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="space-y-1.5 mb-4">
+                    {exp.responsibilities.map((resp, rIdx) => (
+                      <li key={rIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-rose-500 dark:text-pink-400 mt-0.5 shrink-0" />
+                        <span>{resp}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                  {/* Key Impact Metrics */}
+                  {/* Measurable Impact */}
                   {exp.impactMetrics && exp.impactMetrics.length > 0 && (
-                    <div className="bg-pink-50/50 dark:bg-slate-850/60 p-3.5 rounded-xl border border-pink-100/90 dark:border-slate-800 mb-4">
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-rose-700 dark:text-rose-300 uppercase tracking-wide mb-2">
-                        <TrendingUp className="w-3.5 h-3.5 text-rose-400" />
-                        Measurable Impact
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                        {exp.impactMetrics.map((metric, mIdx) => (
-                          <div
-                            key={mIdx}
-                            className="bg-white dark:bg-slate-800 px-3 py-2 rounded-lg text-xs font-semibold text-slate-800 dark:text-slate-200 border border-pink-100 dark:border-slate-700 flex items-center gap-2"
-                          >
-                            <Sparkles className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                            <span>{metric}</span>
-                          </div>
-                        ))}
-                      </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {exp.impactMetrics.map((metric, mIdx) => (
+                        <div
+                          key={mIdx}
+                          className="bg-pink-500/5 dark:bg-pink-400/10 px-2.5 py-1 rounded-md text-[11px] font-semibold text-rose-600 dark:text-pink-300 border border-pink-400/20 flex items-center gap-1.5"
+                        >
+                          <Sparkles className="w-3 h-3 text-pink-400" />
+                          <span>{metric}</span>
+                        </div>
+                      ))}
                     </div>
                   )}
 
-                  {/* Tech stack pills */}
-                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-pink-100/70 dark:border-slate-800">
+                  {/* Tech stack chips */}
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800">
                     {exp.technologies.map((tech, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2.5 py-1 text-xs font-medium bg-pink-50/50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-pink-100/70 dark:border-slate-700"
+                        className="px-2 py-0.5 text-[11px] font-medium bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded"
                       >
                         {tech}
                       </span>

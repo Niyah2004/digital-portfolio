@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  X, 
-  Rocket, 
-  CheckCircle2, 
-  Copy, 
-  Check, 
-  Terminal, 
-  Globe, 
-  ShieldCheck, 
-  CloudRain, 
-  Zap, 
+import {
+  X,
+  Rocket,
+  CheckCircle2,
+  Copy,
+  Check,
+  Terminal,
+  Globe,
+  ShieldCheck,
+  CloudRain,
+  Zap,
   Github,
   FileCheck
 } from 'lucide-react';
@@ -66,12 +66,12 @@ export const DeploymentGuideModal: React.FC<DeploymentGuideModalProps> = ({
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.95, opacity: 0, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-pink-100 dark:border-slate-800 z-10 p-6 sm:p-8 text-slate-800 dark:text-slate-100"
+          className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200/60 dark:border-slate-800 z-10 p-6 sm:p-8 text-slate-800 dark:text-slate-100"
         >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-pink-50 dark:hover:bg-slate-800 transition-colors z-20 cursor-pointer"
+            className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors z-20 cursor-pointer"
             aria-label="Close guide"
           >
             <X className="w-5 h-5" />
@@ -79,7 +79,7 @@ export const DeploymentGuideModal: React.FC<DeploymentGuideModalProps> = ({
 
           {/* Modal Header */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-400 dark:from-rose-500 dark:to-pink-500 text-white flex items-center justify-center shadow-md shadow-pink-300/30 dark:shadow-rose-950/40 shrink-0">
+            <div className="w-11 h-11 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center shadow-xs shrink-0">
               <Rocket className="w-6 h-6" />
             </div>
             <div>
@@ -98,7 +98,7 @@ export const DeploymentGuideModal: React.FC<DeploymentGuideModalProps> = ({
           </div>
 
           {/* Static Deliverable Guarantee Box */}
-          <div className="bg-pink-50/60 dark:bg-slate-850/70 border border-pink-200/70 dark:border-slate-800 rounded-2xl p-4 mb-6 flex items-start gap-3">
+          <div className="bg-slate-50 dark:bg-slate-850/70 border border-slate-200/60 dark:border-slate-800 rounded-2xl p-4 mb-6 flex items-start gap-3">
             <FileCheck className="w-5 h-5 text-rose-500 dark:text-rose-400 shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-1">
               <p className="font-bold text-slate-900 dark:text-slate-100">
@@ -118,17 +118,16 @@ export const DeploymentGuideModal: React.FC<DeploymentGuideModalProps> = ({
                 <button
                   key={guide.id}
                   onClick={() => setSelectedGuideId(guide.id)}
-                  className={`flex flex-col items-center text-center p-3 rounded-2xl border text-xs font-bold transition-all cursor-pointer ${
-                    isSelected
-                      ? 'bg-gradient-to-r from-rose-400 to-pink-400 dark:from-rose-500 dark:to-pink-500 text-white border-transparent shadow-sm shadow-pink-300/30'
-                      : 'bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border-pink-100 dark:border-slate-700 hover:bg-pink-50 dark:hover:bg-slate-700'
-                  }`}
+                  className={`flex flex-col items-center text-center p-3 rounded-2xl border text-xs font-bold transition-all cursor-pointer ${isSelected
+                      ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-transparent shadow-xs'
+                      : 'bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border-slate-200/60 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700'
+                    }`}
                 >
-                  <div className={`p-1.5 rounded-lg mb-1.5 ${isSelected ? 'bg-white/20' : 'bg-pink-50 dark:bg-slate-700'}`}>
+                  <div className={`p-1.5 rounded-lg mb-1.5 ${isSelected ? 'bg-white/15 dark:bg-slate-900/10' : 'bg-slate-50 dark:bg-slate-700'}`}>
                     {getGuideIcon(guide.id)}
                   </div>
                   <span className="line-clamp-1">{guide.title.split('(')[0].replace('Deploy to ', '')}</span>
-                  <span className={`text-[10px] font-normal mt-0.5 ${isSelected ? 'text-pink-100' : 'text-slate-500 dark:text-slate-400'}`}>
+                  <span className={`text-[10px] font-normal mt-0.5 ${isSelected ? 'text-slate-300 dark:text-slate-600' : 'text-slate-500 dark:text-slate-400'}`}>
                     {guide.estimatedTime}
                   </span>
                 </button>
@@ -137,7 +136,7 @@ export const DeploymentGuideModal: React.FC<DeploymentGuideModalProps> = ({
           </div>
 
           {/* Selected Guide Details */}
-          <div className="bg-pink-50/30 dark:bg-slate-850/60 rounded-2xl p-5 sm:p-6 border border-pink-100 dark:border-slate-800 space-y-6">
+          <div className="bg-slate-50 dark:bg-slate-850/60 rounded-2xl p-5 sm:p-6 border border-slate-200/60 dark:border-slate-800 space-y-6">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 font-heading">
@@ -154,10 +153,10 @@ export const DeploymentGuideModal: React.FC<DeploymentGuideModalProps> = ({
               {currentGuide.steps.map((s) => (
                 <div
                   key={s.step}
-                  className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-pink-100/80 dark:border-slate-800 space-y-2 shadow-2xs"
+                  className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/60 dark:border-slate-800 space-y-2 shadow-2xs"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-pink-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 text-xs font-bold flex items-center justify-center shrink-0">
+                    <span className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 text-rose-600 dark:text-pink-300 text-xs font-bold flex items-center justify-center shrink-0">
                       {s.step}
                     </span>
                     <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 font-heading">
@@ -193,16 +192,16 @@ export const DeploymentGuideModal: React.FC<DeploymentGuideModalProps> = ({
             </div>
 
             {/* Free Tier Notice */}
-            <div className="text-xs text-slate-600 dark:text-slate-300 bg-pink-50/60 dark:bg-slate-900/80 p-3 rounded-xl border border-pink-200/60 dark:border-slate-800 flex items-center gap-2">
+            <div className="text-xs text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-900/80 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-rose-400 shrink-0" />
               <span>{currentGuide.freeTierNote}</span>
             </div>
           </div>
 
           {/* Modal Footer */}
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-pink-100 dark:border-slate-800">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-200/60 dark:border-slate-800">
             <div className="text-xs text-slate-500 dark:text-slate-400">
-              Build command: <code className="font-mono text-slate-800 dark:text-slate-200 bg-pink-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">npm run build</code> → Output: <code className="font-mono text-slate-800 dark:text-slate-200 bg-pink-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">dist/</code>
+              Build command: <code className="font-mono text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">npm run build</code> → Output: <code className="font-mono text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">dist/</code>
             </div>
 
             <button
