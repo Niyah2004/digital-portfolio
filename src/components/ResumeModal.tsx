@@ -53,7 +53,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
           <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200/60 dark:border-slate-800 print:hidden">
             <div className="flex items-center gap-2">
               <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-slate-800 text-rose-600 dark:text-pink-300 border border-slate-200/60 dark:border-slate-700">
-                Curriculum Vitae
+                Resume
               </span>
               <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                 Print & Download Ready
