@@ -237,7 +237,7 @@ export const projectsData: Project[] = [
     categoryLabel: "Web App & Family Productivity",
     featured: true,
     fallbackPoster: habitiatPreview,
-    description: "A React + TypeScript web app that helps families build daily routines together. Parents create step-by-step tasks — morning routines, chores, practice sessions — while kids check off steps in a dedicated kid view, building streaks and getting celebratory feedback as they go.",
+    description: "A React + JavaScript Mobile/Web app that helps families build daily routines together. Parents create step-by-step tasks — morning routines, chores, practice sessions — while kids check off steps in a dedicated kid view, building streaks and getting celebratory feedback as they go.",
     techStack: ["React", "React Native", "Expo", "Node.js", "JavaScript", "Tailwind CSS", "React Navigation"],
     metrics: [],
     keyFeatures: [
