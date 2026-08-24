@@ -238,7 +238,7 @@ export const projectsData: Project[] = [
     featured: true,
     fallbackPoster: habitiatPreview,
     description: "A React + TypeScript web app that helps families build daily routines together. Parents create step-by-step tasks — morning routines, chores, practice sessions — while kids check off steps in a dedicated kid view, building streaks and getting celebratory feedback as they go.",
-    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Radix UI / shadcn", "React Hook Form", "TanStack Query"],
+    techStack: ["React", "React Native", "Expo", "Node.js", "JavaScript", "Tailwind CSS", "React Navigation"],
     metrics: [],
     keyFeatures: [
       "Separate parent and kid views for managing vs. completing tasks",
@@ -246,7 +246,7 @@ export const projectsData: Project[] = [
       "Celebratory toast notifications when a task streak is completed",
       "Grid and calendar display modes for reviewing routines over time"
     ],
-    architectureNotes: "Built with Vite, React, and TypeScript, using a shadcn/Radix UI component layer for accessible primitives and TanStack Query for data state management."
+    architectureNotes: "Built with React and Expo for cross-platform support, with a Node.js backend powering data persistence. The mobile interface uses React Native and React Navigation, while shared JavaScript logic keeps the codebase consistent across platforms."
   },
   {
     id: "proj-attune",
