@@ -13,6 +13,20 @@
     letter-spacing: -0.025em;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
+
+  .font-mono, .font-label {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Minimalist scrollbar */
@@ -82,9 +96,44 @@ html.dark .sleek-hover:hover {
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
 }
 
+/* Card & Section Interactive Cursor Spotlight */
+.spotlight-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(244, 114, 182, 0.12),
+    transparent 80%
+  );
+}
+
+.dark .spotlight-container::before,
+html.dark .spotlight-container::before {
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(244, 114, 182, 0.16),
+    transparent 80%
+  );
+}
+
+.spotlight-container:hover::before {
+  opacity: 1;
+}
+
 /* Minimalist ambient mesh */
 .bg-mesh-rose {
-  background-image: 
+  background-image:
     radial-gradient(at 15% 10%, rgba(253, 232, 238, 0.45) 0px, transparent 45%),
     radial-gradient(at 85% 15%, rgba(252, 231, 243, 0.35) 0px, transparent 40%),
     radial-gradient(at 50% 60%, rgba(255, 245, 248, 0.4) 0px, transparent 50%);
@@ -92,7 +141,7 @@ html.dark .sleek-hover:hover {
 
 .dark .bg-mesh-rose,
 html.dark .bg-mesh-rose {
-  background-image: 
+  background-image:
     radial-gradient(at 15% 10%, rgba(244, 114, 182, 0.04) 0px, transparent 45%),
     radial-gradient(at 85% 15%, rgba(236, 72, 153, 0.03) 0px, transparent 40%),
     radial-gradient(at 50% 60%, rgba(15, 23, 42, 0.6) 0px, transparent 50%);

@@ -143,7 +143,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                   <span className="font-bold text-slate-900 dark:text-slate-100 print:text-black">Programming & Development:</span> Python, JavaScript, TypeScript, Java, C++, HTML, CSS, React Native, Node.js, REST API, SQL, Git, MATLAB
                 </p>
                 <p>
-                  <span className="font-bold text-slate-900 dark:text-slate-100 print:text-black">Cloud, DevOps & Testing:</span> Docker, Kubernetes, GitHub/GitLab, CI/CD (Jenkins, Azure DevOps), Selenium, Cypress, Playwright, TestNG
+                  <span className="font-bold text-slate-900 dark:text-slate-100 print:text-black">Cloud, DevOps & Testing:</span> Docker, GitHub/GitLab, CI/CD (Jenkins, Azure DevOps), Selenium, Cypress, Playwright, TestNG
                 </p>
                 <p>
                   <span className="font-bold text-slate-900 dark:text-slate-100 print:text-black">Gen AI & Agentic AI:</span> Agentic AI System Design, Multi-Agent Workflow Integration, RAG, Prompt Engineering, LLM Integration, Model Evaluation

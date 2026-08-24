@@ -1,4 +1,4 @@
-import { Profile, Skill, Project, WorkExperience, DeploymentGuide, Education } from '../types';
+import { Profile, Skill, Project, WorkExperience, Education } from '../types';
 import avatarPhoto from '../../assets/JWImage.jpg';
 import habitiatPreview from '../../assets/projects/habitiat-preview.svg';
 import attunePreview from '../../assets/projects/attune-preview.svg';
@@ -11,7 +11,6 @@ export const initialProfile: Profile = {
   role: "Technology Consulting and Software Development",
   tagline: "Computer Science Graduate from The University of North Texas, experience in Artificial Intelligence,",
   bio: "I am a technology consultant building modern web applications, machine learning projects, and mobile apps. My work bridges systems architecture and thoughtful UI design, creating software that's fast, accessible, and genuinely useful.",
-  //shortBio: "Specializing in React, TypeScript, Python/ML, and React Native, with hands-on experience shipping real projects end-to-end.",
   location: "Dallas, Texas",
   phone: "469.231.4486",
   availability: {
@@ -77,10 +76,6 @@ export const skillsData: Skill[] = [
     id: "fe-react",
     name: "React & TypeScript",
     category: "frontend",
-    level: 75,
-    levelLabel: "Advanced",
-    icon: "Code2",
-    experienceYears: 2,
     highlight: "Component architecture, hooks, and strict TypeScript across two shipped apps (Habitiat, Flourish)",
     tags: ["React", "TypeScript", "Vite", "TanStack Query"]
   },
@@ -88,10 +83,6 @@ export const skillsData: Skill[] = [
     id: "fe-ui",
     name: "Tailwind CSS & Component Libraries",
     category: "frontend",
-    level: 70,
-    levelLabel: "Proficient",
-    icon: "Palette",
-    experienceYears: 2,
     highlight: "Responsive Tailwind layouts, Radix UI/shadcn primitives, and accessible forms with React Hook Form",
     tags: ["Tailwind CSS", "Radix UI", "shadcn/ui", "React Hook Form"]
   },
@@ -99,10 +90,6 @@ export const skillsData: Skill[] = [
     id: "mob-rn",
     name: "React Native & Expo",
     category: "frontend",
-    level: 65,
-    levelLabel: "Proficient",
-    icon: "Sparkles",
-    experienceYears: 1,
     highlight: "Expo Router navigation, local device storage, and gesture/haptic interactions for a wellness app",
     tags: ["React Native", "Expo", "Expo Router", "AsyncStorage"]
   },
@@ -112,10 +99,6 @@ export const skillsData: Skill[] = [
     id: "be-node",
     name: "Node.js, Express & Supabase",
     category: "backend",
-    level: 60,
-    levelLabel: "Proficient",
-    icon: "Server",
-    experienceYears: 1,
     highlight: "Lightweight Express APIs proxying external services, with Supabase for persistence",
     tags: ["Node.js", "Express", "Supabase", "REST APIs"]
   },
@@ -125,10 +108,6 @@ export const skillsData: Skill[] = [
     id: "ai-ml",
     name: "Machine Learning (Python)",
     category: "ai_tools",
-    level: 68,
-    levelLabel: "Proficient",
-    icon: "Cpu",
-    experienceYears: 2,
     highlight: "Word2Vec embeddings and PyTorch classifiers, evaluated with cross-validation on real NLP datasets",
     tags: ["Python", "PyTorch", "gensim", "scikit-learn"]
   },
@@ -136,10 +115,6 @@ export const skillsData: Skill[] = [
     id: "ai-tfjs",
     name: "On-Device ML (TensorFlow.js)",
     category: "ai_tools",
-    level: 55,
-    levelLabel: "Proficient",
-    icon: "Gauge",
-    experienceYears: 1,
     highlight: "Client-side inference for privacy-first predictions with no server round-trip",
     tags: ["TensorFlow.js", "On-Device Inference", "Privacy-First ML"]
   },
@@ -147,10 +122,6 @@ export const skillsData: Skill[] = [
     id: "ai-gemini",
     name: "Generative AI Integration",
     category: "ai_tools",
-    level: 62,
-    levelLabel: "Proficient",
-    icon: "Network",
-    experienceYears: 1,
     highlight: "Google Gemini API wired through a custom Express backend to power an in-app assistant",
     tags: ["Gemini API", "Google GenAI SDK", "Express Proxy"]
   },
@@ -160,10 +131,6 @@ export const skillsData: Skill[] = [
     id: "ai-agentic",
     name: "Agentic AI System Design & Multi-Agent Workflows",
     category: "genai_agentic",
-    level: 92,
-    levelLabel: "Expert",
-    icon: "Sparkles",
-    experienceYears: 2,
     highlight: "Architecting multi-agent workflow integrations, context engineering, dynamic agent tool invocation, and autonomous reasoning pipelines.",
     tags: ["Agentic AI", "Multi-Agent Workflows", "Context Engineering", "Autonomous Systems", "Tool Use"]
   },
@@ -171,10 +138,6 @@ export const skillsData: Skill[] = [
     id: "ai-rag-llm",
     name: "RAG & Enterprise LLM Integration",
     category: "genai_agentic",
-    level: 90,
-    levelLabel: "Expert",
-    icon: "Cpu",
-    experienceYears: 2,
     highlight: "Integrating LLMs (Gemini, OpenAI) with vector retrieval (RAG), structured output schemas, graceful no-key fallback systems, and production-ready endpoints.",
     tags: ["RAG", "LLM Integration", "Gemini API", "Vector Embeddings", "Express Proxy", "Structured Prompts"]
   },
@@ -182,10 +145,6 @@ export const skillsData: Skill[] = [
     id: "ai-prompt-eval",
     name: "Prompt Engineering & Model Evaluation",
     category: "genai_agentic",
-    level: 88,
-    levelLabel: "Advanced",
-    icon: "Network",
-    experienceYears: 2,
     highlight: "Designing and hardening system prompts, context-window optimizations, adversarial robustness testing, and ML model evaluation metrics.",
     tags: ["Prompt Engineering", "Context Engineering", "Model Evaluation", "Adversarial Hardening", "PyTorch"]
   },
@@ -195,10 +154,6 @@ export const skillsData: Skill[] = [
     id: "sec-frameworks",
     name: "Risk & Compliance (NIST CSF, ISO 27001, PCI-DSS, SOC 2)",
     category: "risk_compliance",
-    level: 90,
-    levelLabel: "Expert",
-    icon: "ShieldCheck",
-    experienceYears: 2,
     highlight: "Embedding security best practices and compliance standards (NIST CSF, ISO 27001, PCI-DSS, SOC 2) throughout delivery lifecycles and infrastructure.",
     tags: ["NIST CSF", "ISO 27001", "PCI-DSS", "SOC 2", "Security Best Practices", "Control Evaluation"]
   },
@@ -206,10 +161,6 @@ export const skillsData: Skill[] = [
     id: "sec-auth-iam",
     name: "Authentication Architecture & Access Control (SSO, MFA, IAM)",
     category: "risk_compliance",
-    level: 86,
-    levelLabel: "Advanced",
-    icon: "Lock",
-    experienceYears: 2,
     highlight: "Evaluating enterprise authentication architectures (SSO, MFA, IAM policies), system availability, failover configurations, and network security controls.",
     tags: ["SSO", "MFA", "IAM Policies", "Access Control", "GCP & Azure Security", "Network Controls"]
   },
@@ -217,10 +168,6 @@ export const skillsData: Skill[] = [
     id: "sec-infra-audit",
     name: "Control Evaluation & Infrastructure Integrity Reviews",
     category: "risk_compliance",
-    level: 85,
-    levelLabel: "Advanced",
-    icon: "CheckCircle2",
-    experienceYears: 2,
     highlight: "Executing structured test scripts and technical reviews across 12+ infrastructure components, relational database schemas, and data integrity logic.",
     tags: ["Control Evaluation", "Database Schemas", "Data Integrity", "Compliance Auditing", "Risk Assessments"]
   },
@@ -230,10 +177,6 @@ export const skillsData: Skill[] = [
     id: "dev-python-java",
     name: "Python, Java, C++ & MATLAB",
     category: "programming",
-    level: 90,
-    levelLabel: "Expert",
-    icon: "FileCode2",
-    experienceYears: 3,
     highlight: "Building Python data pipelines and ML models, Java enterprise backend logic, C++ systems code, and MATLAB numerical computing.",
     tags: ["Python", "Java", "C++", "MATLAB", "OOP Architecture", "Data Pipelines"]
   },
@@ -241,10 +184,6 @@ export const skillsData: Skill[] = [
     id: "dev-sql-databases",
     name: "SQL & Relational Database Engineering",
     category: "programming",
-    level: 85,
-    levelLabel: "Advanced",
-    icon: "Database",
-    experienceYears: 2,
     highlight: "Designing relational database schemas, writing optimized SQL queries, verifying data integrity validation logic, and integrating Supabase/PostgreSQL.",
     tags: ["SQL", "PostgreSQL", "Supabase", "Schema Design", "Data Integrity", "Git"]
   },
@@ -252,23 +191,15 @@ export const skillsData: Skill[] = [
   // Cloud, DevOps & Testing (Added from Resume)
   {
     id: "cloud-containers",
-    name: "Cloud Platforms & Containers (GCP, Azure, Docker, K8s)",
+    name: "Cloud Platforms & Containers (GCP, Azure, Docker)",
     category: "cloud_testing",
-    level: 84,
-    levelLabel: "Advanced",
-    icon: "Cloud",
-    experienceYears: 2,
-    highlight: "Assessing enterprise infrastructure across GCP, Azure, and IBM mainframes; deploying and managing containerized applications with Docker and Kubernetes.",
-    tags: ["Docker", "Kubernetes", "GCP", "Azure", "IBM Mainframe", "Hybrid Cloud"]
+    highlight: "Assessing enterprise infrastructure across GCP, Azure, and IBM mainframes; deploying and managing containerized applications with Docker.",
+    tags: ["Docker", "GCP", "Azure", "IBM Mainframe", "Hybrid Cloud"]
   },
   {
     id: "cloud-cicd",
     name: "CI/CD Pipelines & Version Control (Jenkins, GitLab CI, Azure DevOps)",
     category: "cloud_testing",
-    level: 86,
-    levelLabel: "Advanced",
-    icon: "Workflow",
-    experienceYears: 2,
     highlight: "Automating build, test, and deployment workflows with Jenkins, GitLab CI, Azure DevOps, GitHub Actions, and Git version control.",
     tags: ["Jenkins", "GitLab CI", "Azure DevOps", "GitHub", "GitLab", "CI/CD Pipelines"]
   },
@@ -276,12 +207,8 @@ export const skillsData: Skill[] = [
     id: "testing-frameworks",
     name: "Automated Testing Frameworks (Selenium, Cypress, Playwright, TestNG)",
     category: "cloud_testing",
-    level: 88,
-    levelLabel: "Advanced",
-    icon: "Gauge",
-    experienceYears: 2,
-    highlight: "Designing and maintaining robust automated test suites with Selenium, Appium, Cypress, Playwright, and TestNG across web, mobile, and API surfaces.",
-    tags: ["Playwright", "Cypress", "Selenium", "Appium", "TestNG", "AI-Driven Testing"]
+    highlight: "Designing and maintaining robust automated test suites with Selenium, Cypress, Playwright, and TestNG across web, mobile, and API surfaces.",
+    tags: ["Playwright", "Cypress", "Selenium", "TestNG", "AI-Driven Testing"]
   },
 
   // Tools & Platforms (Added from Resume)
@@ -289,10 +216,6 @@ export const skillsData: Skill[] = [
     id: "tools-dev-platforms",
     name: "Developer Tools & Platforms (Firebase, TensorFlow.js, Jira, ServiceNow)",
     category: "tools_platforms",
-    level: 86,
-    levelLabel: "Advanced",
-    icon: "Wrench",
-    experienceYears: 2,
     highlight: "Client-side on-device ML with TensorFlow.js, cloud backends with Firebase, enterprise service management with ServiceNow, Jira sprint workflows, Notion, and Slack.",
     tags: ["Firebase", "TensorFlow.js", "Jira", "ServiceNow", "Notion", "Slack"]
   },
@@ -300,10 +223,6 @@ export const skillsData: Skill[] = [
     id: "tools-bi-design",
     name: "BI, Analytics & UI Prototyping (Power BI, Tableau, Excel, Figma)",
     category: "tools_platforms",
-    level: 88,
-    levelLabel: "Advanced",
-    icon: "BarChart3",
-    experienceYears: 2,
     highlight: "Distilling complex data sets into executive-ready dashboards using Power BI, Tableau, and Excel; creating high-fidelity interactive UI/UX prototypes in Figma.",
     tags: ["Power BI", "Tableau", "Excel", "Figma", "Data Dashboards", "UI/UX Prototyping"]
   }
@@ -318,7 +237,6 @@ export const projectsData: Project[] = [
     categoryLabel: "Web App & Family Productivity",
     featured: true,
     fallbackPoster: habitiatPreview,
-    githubUrl: "https://github.com/Niyah2004/habit-sparkle-guide",
     description: "A React + TypeScript web app that helps families build daily routines together. Parents create step-by-step tasks — morning routines, chores, practice sessions — while kids check off steps in a dedicated kid view, building streaks and getting celebratory feedback as they go.",
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Radix UI / shadcn", "React Hook Form", "TanStack Query"],
     metrics: [],
@@ -338,7 +256,6 @@ export const projectsData: Project[] = [
     categoryLabel: "Mobile App & Wellness",
     featured: true,
     fallbackPoster: attunePreview,
-    githubUrl: "https://github.com/Niyah2004/Attune",
     description: "A React Native (Expo) app offering menstrual cycle tracking and self-care tools for women, built with privacy as a first principle: predictions run on-device with TensorFlow.js and personal data stays in local, private storage instead of a cloud database.",
     techStack: ["React Native", "Expo", "TypeScript", "TensorFlow.js", "Expo Router", "AsyncStorage"],
     metrics: [],
@@ -358,7 +275,6 @@ export const projectsData: Project[] = [
     categoryLabel: "AI & Machine Learning",
     featured: true,
     fallbackPoster: mlLexicalSemanticsPreview,
-    githubUrl: "https://github.com/Niyah2004/Machine-Learning-",
     description: "A machine learning coursework project exploring lexical semantics: custom Word2Vec embeddings trained on tweet text feed a PyTorch neural network that classifies tweets as negative, neutral, or positive, evaluated with stratified cross-validation on the TweetEval sentiment benchmark.",
     techStack: ["Python", "PyTorch", "gensim (Word2Vec)", "scikit-learn", "Jupyter Notebook", "TweetEval Dataset"],
     metrics: [],
@@ -378,7 +294,6 @@ export const projectsData: Project[] = [
     categoryLabel: "Fintech & AI",
     featured: true,
     fallbackPoster: flourishPreview,
-    githubUrl: "https://github.com/Niyah2004/Flourish-Wealth-Trading-",
     description: "A gamified personal finance app concept for women, combining fractional trading and community investing with educational pathways, Bilt & open-banking account sync, biometric security, and goal-based savings buckets — with a Gemini-powered assistant served through a lightweight Express backend.",
     techStack: ["React", "TypeScript", "Vite", "Express", "Supabase", "Google Gemini API", "TanStack Query", "Recharts"],
     metrics: [],
@@ -473,7 +388,7 @@ export const workHistoryData: WorkExperience[] = [
     role: "Geek Squad Agent",
     company: "Best Buy",
     location: "Texas",
-    period: "Fall 2024 — Spring 2025",
+    period: "Summer 2023 — Fall 2023",
     isCurrent: false,
     type: "Part-Time",
     description: "Diagnosed and repaired customer technology — computers, phones, and peripherals — while helping customers understand their devices and available services.",
@@ -491,7 +406,7 @@ export const workHistoryData: WorkExperience[] = [
     role: "IT Help Desk Technician",
     company: "University of North Texas",
     location: "Denton, Texas",
-    period: "Fall 2023 — Spring 2024",
+    period: "August 2024— May 2025",
     isCurrent: false,
     type: "Part-Time",
     description: "Provided first-line IT support to students, faculty, and staff across university systems, accounts, and campus technology.",
@@ -509,7 +424,7 @@ export const workHistoryData: WorkExperience[] = [
     role: "Academic Coach",
     company: "University of North Texas",
     location: "Denton, Texas",
-    period: "Fall 2022 — Spring 2023",
+    period: "August 2025 — May 2025",
     isCurrent: false,
     type: "Part-Time",
     description: "Coached fellow students on study strategies, time management, and course material to help them stay on track academically.",
@@ -524,106 +439,3 @@ export const workHistoryData: WorkExperience[] = [
   }
 ];
 
-export const deploymentGuides: DeploymentGuide[] = [
-  {
-    id: "guide-vercel",
-    title: "Deploy to Vercel (Recommended)",
-    icon: "Zap",
-    difficulty: "Beginner",
-    estimatedTime: "2 minutes",
-    steps: [
-      {
-        step: 1,
-        title: "Export or Push Code to GitHub",
-        command: "git push origin main",
-        explanation: "Push your repository to GitHub, GitLab, or Bitbucket."
-      },
-      {
-        step: 2,
-        title: "Import into Vercel",
-        explanation: "Go to vercel.com, click 'Add New Project', and select your repository. Vercel will automatically detect the Vite React framework."
-      },
-      {
-        step: 3,
-        title: "Click Deploy",
-        command: "npm run build",
-        explanation: "Vercel will run the build command and generate your public live URL (e.g., https://your-name-portfolio.vercel.app)."
-      }
-    ],
-    freeTierNote: "Free forever on Vercel Hobby plan with global CDN and automatic SSL certificate."
-  },
-  {
-    id: "guide-netlify",
-    title: "Deploy to Netlify",
-    icon: "CloudRain",
-    difficulty: "Beginner",
-    estimatedTime: "2 minutes",
-    steps: [
-      {
-        step: 1,
-        title: "Build the Static Dist Folder",
-        command: "npm run build",
-        explanation: "This compiles all TypeScript, React, and CSS into a clean, standalone 'dist' folder."
-      },
-      {
-        step: 2,
-        title: "Drag & Drop or Connect Git",
-        explanation: "Log in to netlify.com. You can connect your GitHub repo or simply drag and drop the 'dist' folder directly into Netlify Drop."
-      },
-      {
-        step: 3,
-        title: "Publish",
-        explanation: "Netlify provisions custom domains, instant HTTPS, and continuous deployments upon git push."
-      }
-    ],
-    freeTierNote: "100% Free on Netlify Starter tier with 100GB bandwidth per month."
-  },
-  {
-    id: "guide-ghpages",
-    title: "Deploy to GitHub Pages",
-    icon: "Github",
-    difficulty: "Intermediate",
-    estimatedTime: "3 minutes",
-    steps: [
-      {
-        step: 1,
-        title: "Set base path in vite.config.ts (if using repository subfolder)",
-        command: "export default defineConfig({ base: '/your-repo-name/' })",
-        explanation: "If hosting at username.github.io/repo-name, set the base path. If using a custom root domain, keep base as '/'."
-      },
-      {
-        step: 2,
-        title: "Deploy with gh-pages or GitHub Actions",
-        command: "npx gh-pages -d dist",
-        explanation: "Build the project with 'npm run build' and push the dist folder to the gh-pages branch."
-      },
-      {
-        step: 3,
-        title: "Enable in Repository Settings",
-        explanation: "Go to Repo Settings > Pages > Source > select 'Deploy from branch' (gh-pages)."
-      }
-    ],
-    freeTierNote: "Completely free hosting provided natively by GitHub."
-  },
-  {
-    id: "guide-cloudflare",
-    title: "Deploy to Cloudflare Pages",
-    icon: "ShieldCheck",
-    difficulty: "Beginner",
-    estimatedTime: "2 minutes",
-    steps: [
-      {
-        step: 1,
-        title: "Connect Cloudflare Pages to Git",
-        explanation: "In Cloudflare dashboard, navigate to Workers & Pages > Create application > Pages > Connect to Git."
-      },
-      {
-        step: 2,
-        title: "Configure Build Settings",
-        command: "Framework preset: Vite | Build command: npm run build | Output: dist",
-        explanation: "Cloudflare will automatically compile and distribute your portfolio to 300+ edge locations worldwide."
-      }
-    ],
-    freeTierNote: "Unlimited bandwidth and 500 builds per month on the Cloudflare Free tier."
-  }
-];

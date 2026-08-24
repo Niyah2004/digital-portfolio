@@ -4,7 +4,6 @@ export interface Profile {
   role: string;
   tagline: string;
   bio: string;
-  // shortBio: string;
   location: string;
   availability: {
     status: 'available' | 'contract_only' | 'busy';
@@ -30,10 +29,6 @@ export interface Skill {
   id: string;
   name: string;
   category: SkillCategory;
-  level: number; // 0 - 100
-  levelLabel: 'Expert' | 'Advanced' | 'Proficient';
-  icon: string;
-  experienceYears: number;
   highlight: string;
   tags: string[];
 }
@@ -97,19 +92,4 @@ export interface WorkExperience {
   responsibilities: string[];
   impactMetrics: string[];
   technologies: string[];
-}
-
-export interface DeploymentGuide {
-  id: string;
-  title: string;
-  icon: string;
-  difficulty: 'Beginner' | 'Intermediate';
-  estimatedTime: string;
-  steps: {
-    step: number;
-    title: string;
-    command?: string;
-    explanation: string;
-  }[];
-  freeTierNote: string;
 }

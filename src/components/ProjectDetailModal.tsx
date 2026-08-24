@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ExternalLink, Github, CheckCircle2, Layers, Sparkles, TrendingUp } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 import { Project } from '../types';
 import { VideoPlayer } from './VideoPlayer';
 
@@ -48,17 +48,9 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
           {/* Header */}
           <div className="mb-6">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-slate-100 dark:bg-slate-800 text-rose-600 dark:text-pink-300 border border-slate-200/60 dark:border-slate-700">
-                {project.categoryLabel}
-              </span>
-              {project.featured && (
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 text-xs font-semibold rounded-full bg-amber-100 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-900/50">
-                  <Sparkles className="w-3 h-3" />
-                  Featured Project
-                </span>
-              )}
-            </div>
+            <span className="text-xs font-label font-semibold uppercase tracking-wider text-rose-500 dark:text-pink-400 block mb-2">
+              {project.categoryLabel}
+            </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 font-heading">
               {project.title}
             </h2>
@@ -103,17 +95,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             {project.keyFeatures && (
               <div>
                 <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-3 font-heading">
-                  Key Capabilities & Architecture
+                  Key Capabilities
                 </h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <ul className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed space-y-1.5 list-disc list-inside">
                   {project.keyFeatures.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/80 p-2.5 rounded-xl border border-slate-200/60 dark:border-slate-700"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-rose-400 mt-0.5 shrink-0" />
-                      <span>{feature}</span>
-                    </li>
+                    <li key={idx}>{feature}</li>
                   ))}
                 </ul>
               </div>
@@ -122,9 +108,8 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             {/* Architecture Notes */}
             {project.architectureNotes && (
               <div className="bg-slate-50 dark:bg-slate-850/70 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800">
-                <div className="flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-300 mb-1.5 uppercase tracking-wide">
-                  <Layers className="w-4 h-4 text-rose-400" />
-                  Engineering Deep Dive
+                <div className="text-xs font-label font-semibold text-rose-700 dark:text-rose-300 mb-1.5 uppercase tracking-wide">
+                  Architecture
                 </div>
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   {project.architectureNotes}
@@ -161,17 +146,6 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live Application
-                  </a>
-                )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors border border-slate-200/60 dark:border-slate-800 shadow-2xs cursor-pointer"
-                  >
-                    <Github className="w-4 h-4" />
-                    Source Code
                   </a>
                 )}
               </div>
