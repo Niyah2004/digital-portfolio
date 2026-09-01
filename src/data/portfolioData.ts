@@ -152,10 +152,10 @@ export const skillsData: Skill[] = [
   // Risk & Compliance (Added from Resume)
   {
     id: "sec-frameworks",
-    name: "Risk & Compliance (NIST CSF, ISO 27001, PCI-DSS, SOC 2)",
+    name: "Risk & Compliance",
     category: "risk_compliance",
-    highlight: "Embedding security best practices and compliance standards (NIST CSF, ISO 27001, PCI-DSS, SOC 2) throughout delivery lifecycles and infrastructure.",
-    tags: ["NIST CSF", "ISO 27001", "PCI-DSS", "SOC 2", "Security Best Practices", "Control Evaluation"]
+    highlight: "Embedding security best practices and compliance standards (NIST CSF, PCI-DSS, SOC 2) throughout delivery lifecycles and infrastructure.",
+    tags: ["NIST CSF", "PCI-DSS", "SOC 2", "Security Best Practices", "Control Evaluation"]
   },
   {
     id: "sec-auth-iam",
@@ -238,7 +238,7 @@ export const projectsData: Project[] = [
     featured: true,
     fallbackPoster: habitiatPreview,
     description: "A React + JavaScript Mobile/Web app that helps families build daily routines together. Parents create step-by-step tasks — morning routines, chores, practice sessions — while kids check off steps in a dedicated kid view, building streaks and getting celebratory feedback as they go.",
-    techStack: ["React", "React Native", "Expo", "Node.js", "JavaScript", "Tailwind CSS", "React Navigation"],
+    techStack: ["React", "React Native", "Expo", "Node.js", "JavaScript", "Tailwind CSS", "React Navigation", "Firebase"],
     metrics: [],
     keyFeatures: [
       "Separate parent and kid views for managing vs. completing tasks",
@@ -246,7 +246,7 @@ export const projectsData: Project[] = [
       "Celebratory toast notifications when a task streak is completed",
       "Grid and calendar display modes for reviewing routines over time"
     ],
-    architectureNotes: "Built with React and Expo for cross-platform support, with a Node.js backend powering data persistence. The mobile interface uses React Native and React Navigation, while shared JavaScript logic keeps the codebase consistent across platforms."
+    architectureNotes: "Built with React and Expo for cross-platform support, with a Node.js backend. Firebase as Cloud database. The mobile interface uses React Native and React Navigation, while shared JavaScript logic keeps the codebase consistent across platforms."
   },
   {
     id: "proj-attune",
@@ -257,7 +257,7 @@ export const projectsData: Project[] = [
     featured: true,
     fallbackPoster: attunePreview,
     description: "A React Native (Expo) app offering menstrual cycle tracking and self-care tools for women, built with privacy as a first principle: predictions run on-device with TensorFlow.js and personal data stays in local, private storage instead of a cloud database.",
-    techStack: ["React Native", "Expo", "TypeScript", "TensorFlow.js", "Expo Router", "AsyncStorage"],
+    techStack: ["React Native", "Expo", "TypeScript", "TensorFlow.js", "Expo Router", "AsyncStorage", "Supabase"],
     metrics: [],
     keyFeatures: [
       "On-device cycle prediction using TensorFlow.js — no data leaves the phone",
@@ -265,7 +265,7 @@ export const projectsData: Project[] = [
       "Custom themed navigation (Oracle, Constellation, Altar, Explore) for a calming self-care experience",
       "Built with Expo Router and native gesture/haptic feedback"
     ],
-    architectureNotes: "Uses @tensorflow/tfjs-react-native for on-device inference (LocalPredictor) and AsyncStorage-backed private storage (PrivateStorage) so cycle data never has to touch a server."
+    architectureNotes: "Uses @tensorflow/tfjs-react-native for on-device inference (LocalPredictor) and AsyncStorage-backed private storage (PrivateStorage) for  so cycle data never has to touch a server."
   },
   {
     id: "proj-ml-lexical-semantics",

@@ -137,7 +137,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               </h2>
               <div className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300 print:text-slate-700">
                 <p>
-                  <span className="font-bold text-slate-900 dark:text-slate-100 print:text-black">Risk & Compliance:</span> NIST CSF, ISO 27001, PCI-DSS, SOC 2, Security Best Practices, Control Evaluation, Authentication Architecture (SSO, MFA, IAM)
+                  <span className="font-bold text-slate-900 dark:text-slate-100 print:text-black">Risk & Compliance:</span> PCI-DSS, SOC 2, Security Best Practices, Control Evaluation, Authentication Architecture (SSO, MFA, IAM)
                 </p>
                 <p>
                   <span className="font-bold text-slate-900 dark:text-slate-100 print:text-black">Programming & Development:</span> Python, JavaScript, TypeScript, Java, C++, HTML, CSS, React Native, Node.js, REST API, SQL, Git, MATLAB
