@@ -328,18 +328,18 @@ export const workHistoryData: WorkExperience[] = [
     period: "July, 2026 — Present",
     isCurrent: true,
     type: "Consultant 1",
-    description: "Evaluating technical controls, authentication architecture, and infrastructure security posture for enterprise clients across risk and compliance frameworks including NIST CSF, PCI-DSS, HIPAA, and SOC 2.",
+    description: "Evaluating technical controls, authentication architecture, and infrastructure security posture for enterprise clients across risk and compliance frameworks including NIST CSF and PCI-DSS",
     responsibilities: [
       "Executed structured test scripts and technical control evaluations across 12+ infrastructure components, relational database schemas, and data integrity logic.",
       "Assessed enterprise authentication architectures — SSO, MFA, and IAM policies — alongside system availability, failover configurations, and network security controls.",
-      "Embedded security best practices and compliance requirements (NIST CSF, ISO 27001, PCI-DSS, SOC 2, HIPAA) throughout client delivery lifecycles and infrastructure reviews.",
+      "Embedded security best practices and compliance requirements (NIST CSF, ISO 27001, PCI-DSS) throughout client delivery lifecycles and infrastructure reviews.",
       "Assessed enterprise infrastructure spanning GCP, Azure, and IBM mainframe environments as part of hybrid cloud risk assessments."
     ],
     impactMetrics: [
       "Structured technical reviews across 12+ infrastructure components per engagement",
-      "Multi-framework compliance coverage: NIST CSF, ISO 27001, PCI-DSS, SOC 2"
+      "Multi-framework compliance coverage: NIST CSF, ISO 27001, PCI-DSS"
     ],
-    technologies: ["PCI-DSS", "Excel", "HIPAA", "Risk Assessments"]
+    technologies: ["PCI-DSS", "Excel", "NIST-CSF", "Risk Assessments"]
   },
   {
     id: "work-2",
