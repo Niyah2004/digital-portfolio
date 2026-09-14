@@ -76,7 +76,7 @@ export const educationData: Education = {
   ],
   honors: [
     "3.9 Cumulative GPA",
-    "Dean's List Honoree",
+    "2X Dean's List Honoree - 8X President's List",
     "ABET Accredited Engineering Curriculum",
     "Academic Coach & IT Technician Campus Leadership"
   ]
@@ -166,8 +166,8 @@ export const skillsData: Skill[] = [
     id: "sec-frameworks",
     name: "Risk & Compliance",
     category: "risk_compliance",
-    highlight: "Embedding security best practices and compliance standards (NIST CSF, PCI-DSS, SOC 2) throughout delivery lifecycles and infrastructure.",
-    tags: ["NIST CSF", "PCI-DSS", "SOC 2", "Security Best Practices", "Control Evaluation"]
+    highlight: "Embedding security best practices and compliance standards (NIST CSF, PCI-DSS) throughout delivery lifecycles and infrastructure.",
+    tags: ["NIST CSF", "PCI-DSS", "Security Best Practices", "Control Evaluation"]
   },
   {
     id: "sec-auth-iam",
