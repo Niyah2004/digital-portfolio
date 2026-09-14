@@ -51,6 +51,18 @@ export const educationData: Education = {
       //description: "Rigorous focus on articulating complex technical concepts into executive presentations, system architecture diagrams, compliance audit reports, and user-centric documentation.",
       badge: "Technical Communication",
       skills: ["Architecture Specifications", "Compliance Auditing", "API Documentation", "Executive Reporting", "User Research"]
+    },
+    {
+      id: "cert-claude-architect",
+      name: "Claude Architect Certificate – Foundations",
+      focus: "Applied Claude Architecture, Agentic Workflows & Responsible AI Deployment",
+      //description: "",
+      badge: "Claude Architect",
+      dateEarned: "September 11, 2026",
+      skills: ["Claude API", "Agentic Systems", "Prompt Engineering", "Responsible AI Deployment"],
+      // TODO: attach the certificate PDF — see assets/certificates/README.md, then
+      // import it above and set pdfUrl: <importedCertFile> here.
+      pdfUrl: undefined
     }
   ],
   coursework: [

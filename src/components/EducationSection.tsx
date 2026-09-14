@@ -84,9 +84,16 @@ export const EducationSection: React.FC<EducationSectionProps> = ({ education })
             >
               <SpotlightCard className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-2xl p-6 border border-slate-200/60 dark:border-slate-800 shadow-xs h-full flex flex-col justify-between sleek-hover">
                 <div>
-                  <span className="text-[10px] font-label font-semibold text-rose-500 dark:text-pink-400 uppercase tracking-wider">
-                    Certificate
-                  </span>
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="text-[10px] font-label font-semibold text-rose-500 dark:text-pink-400 uppercase tracking-wider">
+                      Certificate
+                    </span>
+                    {cert.dateEarned && (
+                      <span className="text-[10px] font-label text-slate-400 dark:text-slate-500 whitespace-nowrap">
+                        Earned {cert.dateEarned}
+                      </span>
+                    )}
+                  </div>
                   <h4 className="text-base font-bold text-slate-900 dark:text-white font-heading mb-1.5">
                     {cert.name}
                   </h4>
@@ -94,9 +101,28 @@ export const EducationSection: React.FC<EducationSectionProps> = ({ education })
                     {cert.focus}
                   </p>
                 </div>
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-800/80">
-                  {cert.skills.join(' · ')}
-                </p>
+                <div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-800/80 mb-3">
+                    {cert.skills.join(' · ')}
+                  </p>
+                  {cert.pdfUrl ? (
+                    <a
+                      href={cert.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-label font-semibold text-rose-500 dark:text-pink-400 hover:text-rose-600 dark:hover:text-pink-300 transition-colors"
+                    >
+                      View Certificate (PDF)
+                    </a>
+                  ) : (
+                    <span
+                      title="Certificate PDF not yet attached"
+                      className="inline-flex items-center gap-1.5 text-xs font-label text-slate-400 dark:text-slate-500 border border-dashed border-slate-300 dark:border-slate-700 rounded-lg px-2.5 py-1"
+                    >
+                      Attach certificate PDF
+                    </span>
+                  )}
+                </div>
               </SpotlightCard>
             </motion.div>
           ))}

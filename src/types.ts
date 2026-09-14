@@ -40,6 +40,8 @@ export interface EducationCertificate {
   //description: string;
   badge: string;
   skills: string[];
+  dateEarned?: string;
+  pdfUrl?: string;
 }
 
 export interface Education {
