@@ -4,6 +4,7 @@ import habitiatPreview from '../../assets/projects/habitiat-preview.svg';
 import attunePreview from '../../assets/projects/attune-preview.svg';
 import mlLexicalSemanticsPreview from '../../assets/projects/ml-lexical-semantics-preview.svg';
 import flourishPreview from '../../assets/projects/flourish-preview.svg';
+import claudeArchitectFoundationsCert from '../../assets/certificates/claude-architect-foundations.pdf';
 
 export const initialProfile: Profile = {
   name: "Janiyah Wright",
@@ -62,7 +63,8 @@ export const educationData: Education = {
       skills: ["Claude API", "Agentic Systems", "Prompt Engineering", "Responsible AI Deployment"],
       // TODO: attach the certificate PDF — see assets/certificates/README.md, then
       // import it above and set pdfUrl: <importedCertFile> here.
-      pdfUrl: undefined
+     // pdfUrl: undefined
+      pdfUrl: claudeArchitectFoundationsCert
     }
   ],
   coursework: [
