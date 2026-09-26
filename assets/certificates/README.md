@@ -13,3 +13,4 @@ Drop certificate PDF files in this folder, then wire them up in
 
 Until `pdfUrl` is set, the certificate card on the site shows an
 "Attach certificate PDF" placeholder instead of a working link.
+adding 
